@@ -1,0 +1,252 @@
+11/08/2017 20:34:20 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 20:34:25 Debug ** Connection BD SUCESS
+11/08/2017 20:34:37 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 20:36:10 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 20:36:13 Debug ** Connection BD SUCESS
+11/08/2017 20:36:19 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 20:37:01 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 20:40:16 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 20:40:19 Debug ** Connection BD SUCESS
+11/08/2017 20:40:25 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 20:42:41 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 20:42:43 Debug ** Connection BD SUCESS
+11/08/2017 20:43:06 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 20:45:23 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 20:45:25 Debug ** Connection BD SUCESS
+11/08/2017 20:45:30 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 20:46:02 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 20:46:04 Debug ** Connection BD SUCESS
+11/08/2017 20:46:17 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 20:47:16 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 20:47:19 Debug ** Connection BD SUCESS
+11/08/2017 20:47:24 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 20:48:06 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 20:48:09 Debug ** Connection BD SUCESS
+11/08/2017 20:48:19 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 20:52:09 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 20:52:11 Debug ** Connection BD SUCESS
+11/08/2017 20:52:21 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 21:05:01 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:05:03 Debug ** Connection BD SUCESS
+11/08/2017 21:05:09 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 21:26:48 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:26:51 Debug ** Connection BD SUCESS
+11/08/2017 21:26:57 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 21:28:01 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:28:03 Debug ** Connection BD SUCESS
+11/08/2017 21:28:08 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 21:28:10 Error ** javafx.fxml.LoadException: 
+/C:/Users/felip/Google%20Drive/Ideias/Sistema%20Cadastro%20Convidas/projeto/ConvidasFrontEnd/bin/front/xml/contact/ocorrency/modalOcorrency.fxml:13
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2601)
+	at javafx.fxml.FXMLLoader.access$700(FXMLLoader.java:103)
+	at javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:922)
+	at javafx.fxml.FXMLLoader$InstanceDeclarationElement.processAttribute(FXMLLoader.java:971)
+	at javafx.fxml.FXMLLoader$Element.processStartElement(FXMLLoader.java:220)
+	at javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:744)
+	at javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2707)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2527)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
+	at br.convidas.front.contact.ocorrency.TelaModalOcorrency.start(TelaModalOcorrency.java:31)
+	at br.convidas.front.contact.ocorrency.controller.ControllerOcorrencys.clickButtonNew(ControllerOcorrencys.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3470)
+	at javafx.scene.Scene$ClickGenerator.access$8100(Scene.java:3398)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3766)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.ClassNotFoundException: br.sirme.front.telas.escola.controllers.ControllerModalEscola
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:920)
+	... 50 more
+
+11/08/2017 21:29:46 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:29:49 Debug ** Connection BD SUCESS
+11/08/2017 21:29:54 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 21:29:55 Error ** java.lang.NullPointerException
+	at br.convidas.front.contact.ocorrency.controller.ControllerModalOcorrency.populateOcorrencyPF(ControllerModalOcorrency.java:108)
+	at br.convidas.front.contact.ocorrency.controller.ControllerModalOcorrency.setOcorrencyPF(ControllerModalOcorrency.java:173)
+	at br.convidas.front.contact.ocorrency.TelaModalOcorrency.start(TelaModalOcorrency.java:37)
+	at br.convidas.front.contact.ocorrency.controller.ControllerOcorrencys.clickButtonNew(ControllerOcorrencys.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3470)
+	at javafx.scene.Scene$ClickGenerator.access$8100(Scene.java:3398)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3766)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Unknown Source)
+
+11/08/2017 21:30:36 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:30:38 Debug ** Connection BD SUCESS
+11/08/2017 21:30:47 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 21:31:21 Error ** erro ao inserir ocorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.GenericJDBCException: could not extract ResultSet
+11/08/2017 21:32:48 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:32:50 Debug ** Connection BD SUCESS
+11/08/2017 21:38:16 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:38:19 Debug ** Connection BD SUCESS
+11/08/2017 21:38:25 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 21:38:51 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:38:53 Debug ** Connection BD SUCESS
+11/08/2017 21:38:59 Error ** erro ao obter OcorrencyPF no banco: java.lang.IllegalArgumentException: Parameter with that position [0] did not exist
+11/08/2017 21:39:14 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:39:17 Debug ** Connection BD SUCESS
+11/08/2017 21:40:34 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 21:41:11 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:41:14 Debug ** Connection BD SUCESS
+11/08/2017 21:42:52 Error ** erro ao obter OcorrencyPF no banco: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+11/08/2017 21:43:51 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:43:53 Debug ** Connection BD SUCESS
+11/08/2017 21:45:20 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:45:22 Debug ** Connection BD SUCESS
+11/08/2017 21:45:56 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:45:59 Debug ** Connection BD SUCESS
+11/08/2017 21:46:42 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:46:44 Debug ** Connection BD SUCESS
+11/08/2017 21:47:02 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:47:04 Debug ** Connection BD SUCESS
+11/08/2017 21:47:50 Error ** erro ao inserir ocorrencyPF no banco: javax.persistence.RollbackException: Error while committing the transaction
+11/08/2017 21:48:46 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:48:48 Debug ** Connection BD SUCESS
+11/08/2017 21:58:39 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 21:58:42 Debug ** Connection BD SUCESS
+11/08/2017 22:04:50 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 22:04:52 Debug ** Connection BD SUCESS
+11/08/2017 22:07:00 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 22:07:02 Debug ** Connection BD SUCESS
+11/08/2017 22:14:17 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 22:14:19 Debug ** Connection BD SUCESS
+11/08/2017 22:16:12 Debug ** 
+
+************************* Start SIRME *************************
+11/08/2017 22:16:15 Debug ** Connection BD SUCESS

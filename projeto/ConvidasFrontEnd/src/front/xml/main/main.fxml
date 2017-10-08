@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="main" fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="910.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.convidas.front.main.controller.ControllerMain">
+   <bottom>
+      <Pane prefHeight="381.0" prefWidth="950.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="406.0" layoutY="331.0" prefHeight="44.0" prefWidth="96.0" text="© 2017 Convidas" />
+            <ImageView fitHeight="325.0" fitWidth="919.0" layoutX="15.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/convidas/convidas2.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </bottom>
+   <top>
+      <Pane prefHeight="329.0" prefWidth="950.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="86.0" fitWidth="327.0" layoutX="342.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/convidas/convidas.jpg" />
+               </image>
+               <viewport>
+                  <Rectangle2D height="10.0" />
+               </viewport>
+            </ImageView>
+            <Button fx:id="buttonConsult" focusTraversable="false" layoutX="289.0" layoutY="128.0" mnemonicParsing="false" onMouseClicked="#clickButtonConsult" prefHeight="73.0" prefWidth="166.0" text="Pessoas" textFill="#333333">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonEvents" focusTraversable="false" layoutX="372.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#clickButtonEvents" prefHeight="73.0" prefWidth="166.0" text="Eventos" textFill="#333333">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonCities" focusTraversable="false" layoutX="538.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#clickButtonCities" prefHeight="72.0" prefWidth="166.0" text="Cidades" textFill="#333333">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonConsultEvents" focusTraversable="false" layoutX="455.0" layoutY="128.0" mnemonicParsing="false" onMouseClicked="#clickButtonConsultEvents" prefHeight="73.0" prefWidth="166.0" text="Eventos" textFill="#333333">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonContact" focusTraversable="false" layoutX="206.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#clickButtonContact" prefHeight="72.0" prefWidth="166.0" text="Pessoas" textFill="#333333">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+            </Button>
+            <Pane layoutX="14.0" layoutY="105.0" prefHeight="8.0" prefWidth="386.0" style="-fx-background-color: #d9edf7; -fx-border-color: #bce8f1;" />
+            <Text layoutX="408.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultas">
+               <font>
+                  <Font name="SansSerif Regular" size="21.0" />
+               </font>
+            </Text>
+            <Pane layoutX="511.0" layoutY="105.0" prefHeight="8.0" prefWidth="386.0" style="-fx-background-color: #d9edf7; -fx-border-color: #bce8f1;" />
+            <Pane layoutX="510.0" layoutY="218.0" prefHeight="8.0" prefWidth="386.0" style="-fx-background-color: #d9edf7; -fx-border-color: #bce8f1;" />
+            <Text layoutX="407.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastros">
+               <font>
+                  <Font name="SansSerif Regular" size="21.0" />
+               </font>
+            </Text>
+            <Pane layoutX="13.0" layoutY="218.0" prefHeight="8.0" prefWidth="386.0" style="-fx-background-color: #d9edf7; -fx-border-color: #bce8f1;" />
+         </children>
+      </Pane>
+   </top>
+</BorderPane>

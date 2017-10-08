@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="639.0" prefWidth="1060.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.convidas.front.contact.controller.ControllerModalPJ">
+   <children>
+      <Pane layoutX="24.0" layoutY="41.0" prefHeight="562.0" prefWidth="1008.0" style="-fx-background-color: #d9edf7; -fx-border-color: #bce8f1; -fx-border-radius: 4; -fx-background-radius: 4;">
+         <children>
+            <Label fx:id="labelTitle" layoutX="22.0" layoutY="14.0" prefHeight="23.0" prefWidth="427.0" text="Cadastro Pessoa Jurídica" textFill="#31708f">
+               <font>
+                  <Font name="SansSerif Regular" size="16.0" />
+               </font>
+            </Label>
+            <Pane layoutX="1.0" layoutY="46.0" prefHeight="515.0" prefWidth="1006.0" style="-fx-background-color: #fff; -fx-background-radius: 4;">
+               <children>
+                  <Label layoutX="16.0" layoutY="332.0" text="Histórico">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="35.0" text="Nome * ">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="85.0" text="E-mail*">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="135.0" text="Rua">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="638.0" layoutY="135.0" text="Número">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="235.0" text="Cidade">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="636.0" layoutY="286.0" text="Contribuição">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textName" layoutX="125.0" layoutY="28.0" onKeyPressed="#actionName" prefHeight="34.0" prefWidth="482.0" promptText="Nome">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textCnpj" layoutX="745.0" layoutY="28.0" onKeyPressed="#actionCnpj" prefHeight="34.0" prefWidth="234.0" promptText="CNPJ">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textEmail" layoutX="125.0" layoutY="78.0" onKeyPressed="#actionEmail" prefHeight="34.0" prefWidth="482.0" promptText="E-mail">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <RadioButton id="true" fx:id="radioNYes" layoutX="745.0" layoutY="87.0" mnemonicParsing="false" selected="true" text="Sim">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="groupN" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton id="false" fx:id="radioNNot" layoutX="856.0" layoutY="87.0" mnemonicParsing="false" text="Não" toggleGroup="$groupN">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </RadioButton>
+                  <TextField fx:id="textRua" layoutX="125.0" layoutY="128.0" prefHeight="34.0" prefWidth="482.0" promptText="Rua">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textNumero" layoutX="745.0" layoutY="128.0" prefHeight="34.0" prefWidth="234.0" promptText="Número">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textBairro" layoutX="125.0" layoutY="178.0" prefHeight="34.0" prefWidth="482.0" promptText="Bairro">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textCep" layoutX="745.0" layoutY="178.0" prefHeight="34.0" prefWidth="234.0" promptText="Cep">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="638.0" layoutY="185.0" text="Cep">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textCidade" editable="false" focusTraversable="false" layoutX="125.0" layoutY="228.0" prefHeight="34.0" prefWidth="445.0" promptText="Cidade">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textTelephone" layoutX="745.0" layoutY="228.0" prefHeight="34.0" prefWidth="234.0" promptText="Telefone">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textResponsavel" layoutX="125.0" layoutY="278.0" onKeyPressed="#actionResponsavel" prefHeight="34.0" prefWidth="482.0" promptText="Responsável">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextArea fx:id="textHistorico" layoutX="125.0" layoutY="328.0" prefHeight="147.0" prefWidth="482.0" promptText="Histórico" wrapText="true">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextArea>
+                  <Label layoutX="16.0" layoutY="185.0" text="Bairro">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="638.0" layoutY="35.0" text="CNPJ*">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="638.0" layoutY="85.0" text="Newsletter *">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="576.0" layoutY="234.0" onMouseClicked="#openCities" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/lupa/lupa_sf_24x24.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Label layoutX="638.0" layoutY="236.0" text="Telefone">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="861.0" layoutY="459.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="34.0" prefWidth="119.0" style="-fx-background-color: #5cb85c; -fx-border-color: #4cae4c; -fx-background-radius: 4; -fx-border-radius: 4;" text=" Salvar" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/save/salvar_2_32x32.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label layoutX="15.0" layoutY="286.0" text="Responsável *">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="textContrib" layoutX="744.0" layoutY="278.0" prefHeight="163.0" prefWidth="234.0" promptText="Contribuição" wrapText="true" />
+               </children>
+            </Pane>
+            <Pane layoutX="1.0" layoutY="46.0" prefHeight="4.0" prefWidth="1007.0" style="-fx-background-color: #d9edf7;" />
+            <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="939.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/contact/man_1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</Pane>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="1060.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.convidas.front.contact.controller.ControllerConsultModalPJ">
+   <children>
+      <Pane layoutX="24.0" layoutY="15.0" prefHeight="673.0" prefWidth="1008.0" style="-fx-background-color: #d9edf7; -fx-border-color: #bce8f1; -fx-border-radius: 4; -fx-background-radius: 4;">
+         <children>
+            <Label fx:id="labelName" layoutX="22.0" layoutY="14.0" prefHeight="23.0" prefWidth="704.0" text="Name Pessoa" textFill="#31708f">
+               <font>
+                  <Font name="SansSerif Regular" size="16.0" />
+               </font>
+            </Label>
+            <Pane layoutX="1.0" layoutY="46.0" prefHeight="626.0" prefWidth="1006.0" style="-fx-background-color: #fff; -fx-background-radius: 4;">
+               <children>
+                  <Label layoutX="16.0" layoutY="338.0" text="Histórico">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="85.0" text="E-mail">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="135.0" text="Rua">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="635.0" layoutY="85.0" text="Número">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="235.0" text="Cidade">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="633.0" layoutY="235.0" text="Contribuição">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textCnpj" editable="false" focusTraversable="false" layoutX="125.0" layoutY="28.0" prefHeight="34.0" prefWidth="482.0" promptText="CNPJ">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textNewsletter" editable="false" focusTraversable="false" layoutX="748.0" layoutY="28.0" prefHeight="34.0" prefWidth="234.0" promptText="Newsletter">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textEmail" editable="false" focusTraversable="false" layoutX="125.0" layoutY="78.0" prefHeight="34.0" prefWidth="482.0" promptText="E-mail">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textRua" editable="false" focusTraversable="false" layoutX="125.0" layoutY="128.0" prefHeight="34.0" prefWidth="482.0" promptText="Rua">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textNumero" editable="false" focusTraversable="false" layoutX="746.0" layoutY="78.0" prefHeight="34.0" prefWidth="234.0" promptText="Número">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textBairro" editable="false" focusTraversable="false" layoutX="125.0" layoutY="178.0" prefHeight="34.0" prefWidth="482.0" promptText="Bairro">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textCep" editable="false" focusTraversable="false" layoutX="745.0" layoutY="128.0" prefHeight="34.0" prefWidth="234.0" promptText="Cep">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="635.0" layoutY="135.0" text="Cep">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textCidade" editable="false" focusTraversable="false" layoutX="125.0" layoutY="228.0" prefHeight="34.0" prefWidth="482.0" promptText="Cidade">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textTelephone" editable="false" focusTraversable="false" layoutX="745.0" layoutY="178.0" prefHeight="34.0" prefWidth="234.0" promptText="Telefone">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextArea fx:id="textHistorico" editable="false" focusTraversable="false" layoutX="125.0" layoutY="338.0" prefHeight="244.0" prefWidth="482.0" promptText="Histórico" wrapText="true">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextArea>
+                  <Label layoutX="16.0" layoutY="185.0" text="Bairro">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="638.0" layoutY="35.0" text="Newsletter">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="635.0" layoutY="186.0" text="Telefone">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="11.0" layoutY="35.0" text="CNPJ">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="16.0" layoutY="285.0" text="Responsável">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textResponsavel" editable="false" focusTraversable="false" layoutX="125.0" layoutY="278.0" prefHeight="34.0" prefWidth="482.0" promptText="Cidade">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextArea fx:id="textContrib" editable="false" focusTraversable="false" layoutX="745.0" layoutY="228.0" prefHeight="244.0" prefWidth="234.0" promptText="Contribuição" wrapText="true">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </TextArea>
+               </children>
+            </Pane>
+            <Pane layoutX="1.0" layoutY="46.0" prefHeight="4.0" prefWidth="1007.0" style="-fx-background-color: #d9edf7;" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="852.0" layoutY="9.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#clickOcorrencys" prefHeight="34.0" prefWidth="128.0" style="-fx-border-color: #2e6da4; -fx-background-color: #337ab7; -fx-border-radius: 2;" text="Ocorrências" textAlignment="CENTER" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="SansSerif Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</Pane>

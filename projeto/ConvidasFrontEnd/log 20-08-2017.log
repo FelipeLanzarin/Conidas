@@ -1,0 +1,6 @@
+20/08/2017 18:09:26 Debug ** 
+
+************************* Start SIRME *************************
+20/08/2017 18:09:32 Debug ** Connection BD SUCESS
+20/08/2017 18:11:10 Error ** erro ao excluir : javax.persistence.RollbackException: Error while committing the transaction
+20/08/2017 18:11:10 Error ** erro ao  dar roolback: javax.persistence.RollbackException: Error while committing the transaction

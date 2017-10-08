@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="600.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.convidas.front.contact.ocorrency.controller.ControllerModalOcorrency">
+   <children>
+      <Pane layoutX="24.0" layoutY="41.0" prefHeight="482.0" prefWidth="551.0" style="-fx-background-color: #d9edf7; -fx-border-color: #bce8f1; -fx-border-radius: 4; -fx-background-radius: 4;">
+         <children>
+            <Label fx:id="labelTitle" layoutX="22.0" layoutY="14.0" prefHeight="23.0" prefWidth="325.0" text="Cadastrar Ocorrência para" textFill="#31708f">
+               <font>
+                  <Font name="SansSerif Regular" size="16.0" />
+               </font>
+            </Label>
+            <Pane layoutX="1.0" layoutY="46.0" prefHeight="435.0" prefWidth="549.0" style="-fx-background-color: #fff; -fx-background-radius: 4;">
+               <children>
+                  <Label layoutX="42.0" layoutY="35.0" text="Data *">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="42.0" layoutY="85.0" text="Descrição *">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="437.0" layoutY="372.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="34.0" prefWidth="73.0" style="-fx-background-color: #5cb85c; -fx-border-color: #4cae4c; -fx-background-radius: 4; -fx-border-radius: 4;" text="Salvar" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <DatePicker fx:id="textDateOcorrency" layoutX="194.0" layoutY="28.0" onKeyReleased="#actionDate" prefHeight="34.0" prefWidth="316.0" promptText="Data" />
+                  <TextArea fx:id="textDescription" layoutX="194.0" layoutY="85.0" onKeyReleased="#actionDescription" prefHeight="250.0" prefWidth="316.0" promptText="Descrição" wrapText="true" />
+               </children>
+            </Pane>
+            <Pane layoutX="1.0" layoutY="46.0" prefHeight="4.0" prefWidth="549.0" style="-fx-background-color: #d9edf7;" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

@@ -1,0 +1,124 @@
+21/09/2017 20:31:48 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 20:31:52 Debug ** Connection BD SUCESS
+21/09/2017 20:31:58 Error ** javafx.fxml.LoadException: Error resolving onKeyPressed='#actionName', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/felip/Google%20Drive/Ideias/Sistema%20Cadastro%20Convidas/projeto/ConvidasFrontEnd/bin/front/xml/cities/modalCity.fxml:42
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2597)
+	at javafx.fxml.FXMLLoader.access$100(FXMLLoader.java:103)
+	at javafx.fxml.FXMLLoader$Element.processEventHandlerAttributes(FXMLLoader.java:610)
+	at javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:770)
+	at javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2823)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2532)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
+	at br.convidas.front.contact.cities.TelaModalCity.start(TelaModalCity.java:29)
+	at br.convidas.front.cities.controller.ControllerCities.newCity(ControllerCities.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3470)
+	at javafx.scene.Scene$ClickGenerator.access$8100(Scene.java:3398)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3766)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Unknown Source)
+
+21/09/2017 20:33:54 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 20:33:58 Debug ** Connection BD SUCESS
+21/09/2017 20:36:45 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 20:36:48 Debug ** Connection BD SUCESS
+21/09/2017 20:38:22 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 20:38:25 Debug ** Connection BD SUCESS
+21/09/2017 21:37:36 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 21:37:43 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 21:37:46 Debug ** Connection BD SUCESS
+21/09/2017 21:40:36 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 21:40:39 Debug ** Connection BD SUCESS
+21/09/2017 21:41:10 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 21:41:13 Debug ** Connection BD SUCESS
+21/09/2017 21:41:24 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 21:41:27 Debug ** Connection BD SUCESS
+21/09/2017 21:43:36 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 21:43:40 Debug ** Connection BD SUCESS
+21/09/2017 21:45:06 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 21:45:09 Debug ** Connection BD SUCESS
+21/09/2017 21:46:35 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 21:46:38 Debug ** Connection BD SUCESS
+21/09/2017 21:50:05 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 21:50:08 Debug ** Connection BD SUCESS
+21/09/2017 21:51:18 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 21:51:21 Debug ** Connection BD SUCESS
+21/09/2017 21:51:46 Error ** erro ao inserir cidade no banco: javax.persistence.PersistenceException: org.hibernate.PersistentObjectException: detached entity passed to persist: br.convidas.classes.Cidade
+21/09/2017 21:53:41 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 21:53:45 Debug ** Connection BD SUCESS
+21/09/2017 21:53:53 Error ** erro ao inserir cidade no banco: javax.persistence.PersistenceException: org.hibernate.PersistentObjectException: detached entity passed to persist: br.convidas.classes.Cidade
+21/09/2017 21:54:43 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 21:54:47 Debug ** Connection BD SUCESS
+21/09/2017 21:56:11 Debug ** 
+
+************************* Start SIRME *************************
+21/09/2017 21:56:14 Debug ** Connection BD SUCESS

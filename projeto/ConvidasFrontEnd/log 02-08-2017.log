@@ -1,0 +1,294 @@
+02/08/2017 20:25:56 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 20:25:59 Debug ** Connection BD SUCESS
+02/08/2017 20:35:37 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 20:35:39 Debug ** Connection BD SUCESS
+02/08/2017 20:36:50 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 20:36:52 Debug ** Connection BD SUCESS
+02/08/2017 20:37:59 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 20:38:01 Debug ** Connection BD SUCESS
+02/08/2017 20:38:49 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 20:38:51 Debug ** Connection BD SUCESS
+02/08/2017 20:41:45 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 20:41:47 Debug ** Connection BD SUCESS
+02/08/2017 21:03:33 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:03:35 Debug ** Connection BD SUCESS
+02/08/2017 21:04:31 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:04:33 Debug ** Connection BD SUCESS
+02/08/2017 21:05:27 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:05:29 Debug ** Connection BD SUCESS
+02/08/2017 21:06:14 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:06:16 Debug ** Connection BD SUCESS
+02/08/2017 21:07:45 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:07:47 Debug ** Connection BD SUCESS
+02/08/2017 21:07:52 Error ** java.lang.NullPointerException
+	at br.convidas.front.contact.controller.ControllerModalPJ.populatePessoa(ControllerModalPJ.java:126)
+	at br.convidas.front.contact.controller.ControllerModalPJ.setPessoa(ControllerModalPJ.java:192)
+	at br.convidas.front.contact.TelaModalPJ.start(TelaModalPJ.java:34)
+	at br.convidas.front.contact.controller.ControllerContacts.clickButtonNewPJ(ControllerContacts.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3470)
+	at javafx.scene.Scene$ClickGenerator.access$8100(Scene.java:3398)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3766)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Unknown Source)
+
+02/08/2017 21:08:23 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:08:25 Debug ** Connection BD SUCESS
+02/08/2017 21:08:28 Error ** java.lang.NullPointerException
+	at br.convidas.front.contact.controller.ControllerModalPF.populatePessoa(ControllerModalPF.java:134)
+	at br.convidas.front.contact.controller.ControllerModalPF.setPessoa(ControllerModalPF.java:207)
+	at br.convidas.front.contact.TelaModalPF.start(TelaModalPF.java:34)
+	at br.convidas.front.contact.controller.ControllerContacts.clickButtonNewPF(ControllerContacts.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3470)
+	at javafx.scene.Scene$ClickGenerator.access$8100(Scene.java:3398)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3766)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Unknown Source)
+
+02/08/2017 21:09:20 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:09:22 Debug ** Connection BD SUCESS
+02/08/2017 21:10:53 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:10:55 Debug ** Connection BD SUCESS
+02/08/2017 21:11:03 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:11:05 Debug ** Connection BD SUCESS
+02/08/2017 21:21:31 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:21:33 Debug ** Connection BD SUCESS
+02/08/2017 21:23:05 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:23:07 Debug ** Connection BD SUCESS
+02/08/2017 21:23:09 Error ** javafx.fxml.LoadException: 
+/C:/Users/felip/Google%20Drive/Ideias/Sistema%20Cadastro%20Convidas/projeto/ConvidasFrontEnd/bin/front/xml/contact/consultContact.fxml
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2601)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2579)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
+	at br.convidas.front.contact.TelaContacts.start(TelaContacts.java:23)
+	at br.convidas.front.main.controller.ControllerMain.clickButtonContact(ControllerMain.java:13)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3470)
+	at javafx.scene.Scene$ClickGenerator.access$8100(Scene.java:3398)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3766)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.ClassCastException: br.convidas.classes.PessoaFisica cannot be cast to br.convidas.classes.PessoaJuridica
+	at br.convidas.front.contact.controller.ControllerContacts.updateTablePJ(ControllerContacts.java:251)
+	at br.convidas.front.contact.controller.ControllerContacts.initialize(ControllerContacts.java:70)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	... 45 more
+
+02/08/2017 21:25:36 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:25:38 Debug ** Connection BD SUCESS
+02/08/2017 21:26:42 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:26:45 Debug ** Connection BD SUCESS
+02/08/2017 21:26:55 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:26:57 Debug ** Connection BD SUCESS
+02/08/2017 21:28:08 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:28:11 Debug ** Connection BD SUCESS
+02/08/2017 21:29:40 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:29:42 Debug ** Connection BD SUCESS
+02/08/2017 21:31:08 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:31:10 Debug ** Connection BD SUCESS
+02/08/2017 21:32:26 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:32:28 Debug ** Connection BD SUCESS
+02/08/2017 21:32:33 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:32:35 Debug ** Connection BD SUCESS
+02/08/2017 21:37:50 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:37:52 Debug ** Connection BD SUCESS
+02/08/2017 21:42:19 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:42:21 Debug ** Connection BD SUCESS
+02/08/2017 21:45:21 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:45:23 Debug ** Connection BD SUCESS
+02/08/2017 21:46:12 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:46:14 Debug ** Connection BD SUCESS
+02/08/2017 21:46:26 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:46:29 Debug ** Connection BD SUCESS
+02/08/2017 21:47:48 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:47:50 Debug ** Connection BD SUCESS
+02/08/2017 21:48:15 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:48:17 Debug ** Connection BD SUCESS
+02/08/2017 21:51:37 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:51:40 Debug ** Connection BD SUCESS
+02/08/2017 21:54:59 Debug ** 
+
+************************* Start SIRME *************************
+02/08/2017 21:55:01 Debug ** Connection BD SUCESS
