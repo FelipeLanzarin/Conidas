@@ -4,6 +4,7 @@ import br.convidas.classes.Cidade;
 import br.convidas.front.contact.cities.controller.ControllerCities;
 import br.convidas.front.contact.controller.ControllerModalPF;
 import br.convidas.front.contact.controller.ControllerModalPJ;
+import br.convidas.front.event.controller.ControllerModalEvent;
 import br.convidas.tools.log.LogTools;
 import fx.tools.action.EventAction;
 
@@ -11,6 +12,7 @@ public class ButtonSelectCityMouseClicked implements EventAction {
 	
 	private ControllerModalPF controllerModalPF;
 	private ControllerModalPJ controllerModalPJ;
+	private ControllerModalEvent controllerModalEvent;
 	private ControllerCities controllerCities;
 	private Cidade cidade;
 	
@@ -19,8 +21,10 @@ public class ButtonSelectCityMouseClicked implements EventAction {
 		try {
 			if(controllerModalPF != null){
 				controllerModalPF.setCidadeSelect(cidade);
-			}else{
+			}else if(controllerModalPJ != null){
 				controllerModalPJ.setCidadeSelect(cidade);
+			}else{
+				controllerModalEvent.setCidadeSelect(cidade);
 			}
 			controllerCities.getStage().close();
 		}catch (Exception e) {
@@ -58,6 +62,14 @@ public class ButtonSelectCityMouseClicked implements EventAction {
 
 	public void setControllerCities(ControllerCities controllerCities) {
 		this.controllerCities = controllerCities;
+	}
+
+	public ControllerModalEvent getControllerModalEvent() {
+		return controllerModalEvent;
+	}
+
+	public void setControllerModalEvent(ControllerModalEvent controllerModalEvent) {
+		this.controllerModalEvent = controllerModalEvent;
 	}
 	
 }

@@ -9,6 +9,7 @@ import br.convidas.classes.Cidade;
 import br.convidas.front.contact.controller.ControllerModalPF;
 import br.convidas.front.contact.controller.ControllerModalPJ;
 import br.convidas.front.contact.handlers.mouse.ButtonSelectCityMouseClicked;
+import br.convidas.front.event.controller.ControllerModalEvent;
 import br.convidas.manager.ManagerCidade;
 import fx.tools.button.ButtonEventUtils;
 import fx.tools.mouse.MouseEnventControler;
@@ -43,6 +44,7 @@ public class ControllerCities implements Initializable{
 	private List<Cidade> listCidades;
 	private ControllerModalPJ controllerModalPJ;
 	private ControllerModalPF controllerModalPF;
+	private ControllerModalEvent controllerModalEvent;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -115,6 +117,7 @@ public class ControllerCities implements Initializable{
 		bec.setCidade(cidade);
 		bec.setControllerModalPF(controllerModalPF);
 		bec.setControllerModalPJ(controllerModalPJ);
+		bec.setControllerModalEvent(controllerModalEvent);
 		bec.setControllerCities(this);
 		select.setOnMouseClicked(MouseEnventControler.getMouseCliked(bec));
 		ButtonEventUtils.setEvents(select);
@@ -149,4 +152,14 @@ public class ControllerCities implements Initializable{
 	public void setControllerModalPF(ControllerModalPF controllerModalPF) {
 		this.controllerModalPF = controllerModalPF;
 	}
+
+
+	public ControllerModalEvent getControllerModalEvent() {
+		return controllerModalEvent;
+	}
+
+	public void setControllerModalEvent(ControllerModalEvent controllerModalEvent) {
+		this.controllerModalEvent = controllerModalEvent;
+	}
+	
 }

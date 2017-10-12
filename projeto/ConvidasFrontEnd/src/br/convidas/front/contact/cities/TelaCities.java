@@ -6,6 +6,7 @@ import java.net.URL;
 import br.convidas.front.contact.cities.controller.ControllerCities;
 import br.convidas.front.contact.controller.ControllerModalPF;
 import br.convidas.front.contact.controller.ControllerModalPJ;
+import br.convidas.front.event.controller.ControllerModalEvent;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;
 import javafx.application.Application;
@@ -18,6 +19,7 @@ public class TelaCities extends Application {
 	
 	private ControllerModalPF controllerModalPF;
 	private ControllerModalPJ controllerModalPJ;
+	private ControllerModalEvent controllerModalEvent;
 	
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -32,6 +34,7 @@ public class TelaCities extends Application {
 			control.setStage(stage);
 			control.setControllerModalPF(controllerModalPF);
 			control.setControllerModalPJ(controllerModalPJ);
+			control.setControllerModalEvent(controllerModalEvent);
 			control.updateTablePF(null);
 			stage.setTitle("Cidades");
 			stage.show();
@@ -42,6 +45,13 @@ public class TelaCities extends Application {
 		
 	}
 	
+	public ControllerModalEvent getControllerModalEvent() {
+		return controllerModalEvent;
+	}
+
+	public void setControllerModalEvent(ControllerModalEvent controllerModalEvent) {
+		this.controllerModalEvent = controllerModalEvent;
+	}
 
 	public ControllerModalPF getControllerModalPF() {
 		return controllerModalPF;

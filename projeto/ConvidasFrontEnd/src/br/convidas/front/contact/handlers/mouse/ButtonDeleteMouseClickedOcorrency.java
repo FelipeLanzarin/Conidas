@@ -28,9 +28,17 @@ public class ButtonDeleteMouseClickedOcorrency implements EventAction{
 			SimpleDateFormat sdFormat = new SimpleDateFormat("dd/MM/yyyy");
 			String date = "";
 			if(ocorrency != null){
-				date = sdFormat.format(ocorrency.getDate());
+				if(ocorrency.getDate() == null){
+					date="";
+				}else{
+					date = sdFormat.format(ocorrency.getDate());
+				}
 			}else{
-				date = sdFormat.format(ocorrencyPJ.getDate());
+				if(ocorrencyPJ.getDate() == null){
+					date="";
+				}else{
+					date = sdFormat.format(ocorrencyPJ.getDate());
+				}
 			}
 			
 			Alert alert = new Alert(AlertType.CONFIRMATION, "Você deseja excluir a ocorrencia do dia "+date+"?", btnSim, btnNao);

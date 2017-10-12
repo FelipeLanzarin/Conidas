@@ -3,7 +3,6 @@ package br.convidas.front.event;
 import java.io.IOException;
 import java.net.URL;
 
-import br.convidas.front.cities.controller.ControllerCities;
 import br.convidas.front.event.controller.ControllerEvent;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;

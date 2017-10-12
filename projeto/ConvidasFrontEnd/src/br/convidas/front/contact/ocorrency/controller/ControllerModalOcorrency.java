@@ -130,11 +130,12 @@ public class ControllerModalOcorrency implements Initializable{
 	
 	private Date getDate(){
 		LocalDate ld = textDateOcorrency.getValue();
+		if(ld == null){
+			return null;
+		}
 		Calendar c =  Calendar.getInstance();
 		c.set(ld.getYear(), ld.getMonthValue()-1, ld.getDayOfMonth());
 		Date date = c.getTime();
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		System.out.println(sdf.format(date));
 		return date;
 	}
 	
@@ -154,6 +155,9 @@ public class ControllerModalOcorrency implements Initializable{
 	
 	private void populateOcorrencyPF(OcorrencyPF ocorrencyPF){
 		textDescription.setText(ocorrencyPF.getDescription());
+		if(ocorrencyPF.getDate() == null){
+			return;
+		}
 		Instant instant = Instant.ofEpochMilli(ocorrencyPF.getDate().getTime());
 	    LocalDate localDate = LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate();
 		textDateOcorrency.setValue(localDate);
@@ -161,6 +165,9 @@ public class ControllerModalOcorrency implements Initializable{
 	
 	private void populateOcorrencyPJ(OcorrencyPJ ocorrencyPJ){
 		textDescription.setText(ocorrencyPJ.getDescription());
+		if(ocorrencyPJ.getDate() == null){
+			return;
+		}
 		Instant instant = Instant.ofEpochMilli(ocorrencyPJ.getDate().getTime());
 	    LocalDate localDate = LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate();
 		textDateOcorrency.setValue(localDate);

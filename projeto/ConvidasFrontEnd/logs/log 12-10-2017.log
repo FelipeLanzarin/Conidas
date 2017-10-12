@@ -1,0 +1,295 @@
+12/10/2017 08:40:50 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 08:41:02 Debug ** Connection BD SUCESS
+12/10/2017 08:55:18 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 08:55:26 Debug ** Connection BD SUCESS
+12/10/2017 08:57:21 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 08:57:25 Debug ** Connection BD SUCESS
+12/10/2017 08:57:34 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 08:57:38 Debug ** Connection BD SUCESS
+12/10/2017 09:08:00 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 09:08:04 Debug ** Connection BD SUCESS
+12/10/2017 09:08:10 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 09:08:14 Debug ** Connection BD SUCESS
+12/10/2017 09:10:04 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 09:10:07 Debug ** Connection BD SUCESS
+12/10/2017 09:10:16 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 09:10:21 Debug ** Connection BD SUCESS
+12/10/2017 09:11:20 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 09:11:24 Debug ** Connection BD SUCESS
+12/10/2017 09:23:29 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 09:23:33 Debug ** Connection BD SUCESS
+12/10/2017 09:28:32 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 09:28:35 Debug ** Connection BD SUCESS
+12/10/2017 09:32:15 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 09:32:19 Debug ** Connection BD SUCESS
+12/10/2017 11:06:50 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 11:06:53 Debug ** Connection BD SUCESS
+12/10/2017 11:08:42 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 11:08:46 Debug ** Connection BD SUCESS
+12/10/2017 11:24:16 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 11:24:20 Debug ** Connection BD SUCESS
+12/10/2017 11:24:26 Error ** javafx.fxml.LoadException: 
+/C:/Users/felip/Google%20Drive/Ideias/Sistema%20Cadastro%20Convidas/Convidas/projeto/ConvidasFrontEnd/bin/front/xml/events/events.fxml
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2601)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2579)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
+	at br.convidas.front.event.TelaEvent.start(TelaEvent.java:24)
+	at br.convidas.front.main.controller.ControllerMain.clickButtonEvents(ControllerMain.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3470)
+	at javafx.scene.Scene$ClickGenerator.access$8100(Scene.java:3398)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3766)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 6
+	at fx.tools.table.FXTable.addRown(FXTable.java:57)
+	at br.convidas.front.event.controller.ControllerEvent.updateTableEvents(ControllerEvent.java:109)
+	at br.convidas.front.event.controller.ControllerEvent.initialize(ControllerEvent.java:52)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	... 43 more
+
+12/10/2017 11:25:18 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 11:25:21 Debug ** Connection BD SUCESS
+12/10/2017 11:26:06 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 11:26:10 Debug ** Connection BD SUCESS
+12/10/2017 11:26:37 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 11:26:40 Debug ** Connection BD SUCESS
+12/10/2017 11:27:14 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 11:27:18 Debug ** Connection BD SUCESS
+12/10/2017 11:27:49 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 11:27:53 Debug ** Connection BD SUCESS
+12/10/2017 11:28:09 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 11:28:12 Debug ** Connection BD SUCESS
+12/10/2017 11:28:42 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 11:28:45 Debug ** Connection BD SUCESS
+12/10/2017 11:29:03 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 11:29:06 Debug ** Connection BD SUCESS
+12/10/2017 11:30:03 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 11:30:07 Debug ** Connection BD SUCESS
+12/10/2017 15:30:51 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 15:31:07 Debug ** Connection BD SUCESS
+12/10/2017 15:31:26 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 15:31:30 Debug ** Connection BD SUCESS
+12/10/2017 15:39:41 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 15:39:44 Debug ** Connection BD SUCESS
+12/10/2017 15:42:01 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 15:42:04 Debug ** Connection BD SUCESS
+12/10/2017 15:42:27 Error ** java.lang.NullPointerException
+	at br.convidas.front.event.controller.ControllerModalEvent.getLocalDate(ControllerModalEvent.java:137)
+	at br.convidas.front.event.controller.ControllerModalEvent.populateEvent(ControllerModalEvent.java:129)
+	at br.convidas.front.event.controller.ControllerModalEvent.setEvent(ControllerModalEvent.java:178)
+	at br.convidas.front.event.TelaModalEvent.start(TelaModalEvent.java:33)
+	at br.convidas.front.event.handlers.mouse.ButtonEditMouseClickedEvent.action(ButtonEditMouseClickedEvent.java:21)
+	at fx.tools.mouse.events.MouseClicked.handle(MouseClicked.java:20)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3470)
+	at javafx.scene.Scene$ClickGenerator.access$8100(Scene.java:3398)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3766)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Unknown Source)
+
+12/10/2017 15:45:50 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 15:45:54 Debug ** Connection BD SUCESS
+12/10/2017 15:47:09 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 15:47:13 Debug ** Connection BD SUCESS
+12/10/2017 16:15:51 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 16:15:54 Debug ** Connection BD SUCESS
+12/10/2017 16:21:31 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 16:21:34 Debug ** Connection BD SUCESS
+12/10/2017 16:22:09 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 16:22:17 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 16:22:21 Debug ** Connection BD SUCESS
+12/10/2017 16:25:40 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 16:25:44 Debug ** Connection BD SUCESS
+12/10/2017 16:26:38 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 16:26:43 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 16:26:46 Debug ** Connection BD SUCESS
+12/10/2017 16:34:18 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 16:34:21 Debug ** Connection BD SUCESS
+12/10/2017 16:35:27 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 16:35:30 Debug ** Connection BD SUCESS
+12/10/2017 16:36:52 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 16:36:55 Debug ** Connection BD SUCESS
+12/10/2017 16:37:39 Debug ** 
+
+************************* Start SIRME *************************
+12/10/2017 16:37:42 Debug ** Connection BD SUCESS
+12/10/2017 16:38:37 Debug ** 
+
+************************* Start Convidas *************************
+12/10/2017 16:38:40 Debug ** Connection BD SUCESS
+12/10/2017 16:38:52 Debug ** 
+
+************************* Start Convidas *************************
+12/10/2017 16:38:55 Debug ** Connection BD SUCESS
+12/10/2017 16:44:19 Debug ** 
+
+************************* Start Convidas *************************
+12/10/2017 16:44:22 Debug ** Connection BD SUCESS
+12/10/2017 16:48:15 Debug ** 
+
+************************* Start Convidas *************************
+12/10/2017 16:48:18 Debug ** Connection BD SUCESS
+12/10/2017 16:49:35 Debug ** 
+
+************************* Start Convidas *************************
+12/10/2017 16:49:36 Debug ** 
+
+************************* Start Convidas *************************
+12/10/2017 16:49:40 Debug ** Connection BD SUCESS
+12/10/2017 16:49:41 Debug ** Connection BD SUCESS
+12/10/2017 16:49:45 Debug ** 
+
+************************* Start Convidas *************************
+12/10/2017 16:49:48 Debug ** Connection BD SUCESS
+12/10/2017 16:51:16 Debug ** 
+
+************************* Start Convidas *************************
+12/10/2017 16:51:19 Debug ** Connection BD SUCESS
+12/10/2017 16:52:30 Debug ** 
+
+************************* Start Convidas *************************
+12/10/2017 16:52:33 Debug ** Connection BD SUCESS

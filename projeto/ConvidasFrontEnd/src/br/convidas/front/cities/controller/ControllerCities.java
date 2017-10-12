@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import br.convidas.classes.Cidade;
+import br.convidas.front.cities.handlers.mouse.ButtonDeleteMouseClickedCity;
+import br.convidas.front.cities.handlers.mouse.ButtonEditCityMouseClicked;
 import br.convidas.front.contact.cities.TelaModalCity;
 import br.convidas.front.contact.controller.ControllerModalPF;
 import br.convidas.front.contact.controller.ControllerModalPJ;
-import br.convidas.front.contact.handlers.mouse.ButtonDeleteMouseClickedCity;
-import br.convidas.front.contact.handlers.mouse.ButtonEditCityMouseClicked;
 import br.convidas.manager.ManagerCidade;
 import br.convidas.tools.log.LogTools;
 import fx.tools.button.ButtonEventUtils;

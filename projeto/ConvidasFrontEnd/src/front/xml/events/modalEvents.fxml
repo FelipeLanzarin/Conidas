@@ -10,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="639.0" prefWidth="690.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.convidas.front.contact.controller.ControllerModalPF">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="639.0" prefWidth="690.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.convidas.front.event.controller.ControllerModalEvent">
    <children>
       <Pane layoutX="24.0" layoutY="41.0" prefHeight="562.0" prefWidth="635.0" style="-fx-background-color: #d9edf7; -fx-border-color: #bce8f1; -fx-border-radius: 4; -fx-background-radius: 4;">
          <children>
@@ -126,17 +126,17 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="textName1" layoutX="125.0" layoutY="28.0" onKeyPressed="#actionName" prefHeight="34.0" prefWidth="482.0" promptText="Nome">
+                  <TextField fx:id="textName" layoutX="125.0" layoutY="28.0" onKeyPressed="#actionName" prefHeight="34.0" prefWidth="482.0" promptText="Nome">
                      <font>
                         <Font name="SansSerif Regular" size="14.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="textCidade1" editable="false" focusTraversable="false" layoutX="125.0" layoutY="189.0" prefHeight="34.0" prefWidth="445.0" promptText="Cidade">
+                  <TextField fx:id="textCidade" editable="false" focusTraversable="false" layoutX="125.0" layoutY="189.0" prefHeight="34.0" prefWidth="445.0" promptText="Cidade">
                      <font>
                         <Font name="SansSerif Regular" size="14.0" />
                      </font>
                   </TextField>
-                  <TextArea fx:id="textDescription1" layoutX="125.0" layoutY="242.0" prefHeight="171.0" prefWidth="482.0" promptText="Descrição" wrapText="true">
+                  <TextArea fx:id="textDescription" layoutX="125.0" layoutY="242.0" prefHeight="171.0" prefWidth="482.0" promptText="Descrição" wrapText="true">
                      <font>
                         <Font name="SansSerif Regular" size="14.0" />
                      </font>
@@ -164,9 +164,12 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <DatePicker layoutX="125.0" layoutY="78.0" prefHeight="34.0" prefWidth="210.0" promptText="Data Inicial" />
-                  <DatePicker layoutX="397.0" layoutY="78.0" prefHeight="34.0" prefWidth="210.0" promptText="Data Final" />
-                  <TextArea layoutX="125.0" layoutY="128.0" prefHeight="45.0" prefWidth="482.0" promptText="Local" />
+                  <DatePicker fx:id="textInitialDate" layoutX="125.0" layoutY="78.0" prefHeight="34.0" prefWidth="210.0" promptText="Data Inicial" />
+                  <DatePicker fx:id="textFinalDate" layoutX="397.0" layoutY="78.0" prefHeight="34.0" prefWidth="210.0" promptText="Data Final" />
+                  <TextArea fx:id="textLocal" layoutX="125.0" layoutY="128.0" prefHeight="45.0" prefWidth="482.0" promptText="Local" wrapText="true">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font></TextArea>
                </children>
             </Pane>
          </children>

@@ -166,7 +166,7 @@ public class ControllerContacts implements Initializable{
 		List<PessoaJuridica> listPFSelect = new ArrayList<>();
 		for (PessoaJuridica pessoa : listPJ) {
 			String nameP = pessoa.getName().toLowerCase();
-			if(pessoa.getName().contains(name)){
+			if(nameP.contains(name)){
 				listPFSelect.add(pessoa);
 			}
 		}
@@ -185,10 +185,11 @@ public class ControllerContacts implements Initializable{
 	}
 	
 	public void filterByNamePF(){
-		String name = textPFName.getText();
+		String name = textPFName.getText().toLowerCase();
 		List<PessoaFisica> listPFSelect = new ArrayList<>();
 		for (PessoaFisica pessoa : listPF) {
-			if(pessoa.getName().contains(name)){
+			String nameP = pessoa.getName().toLowerCase();
+			if(nameP.contains(name)){
 				listPFSelect.add(pessoa);
 			}
 		}

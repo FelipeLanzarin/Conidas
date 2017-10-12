@@ -16,5 +16,6 @@ public class XmlPathUtils {
 	public static final String OCORRENCYS = "/front/xml/contact/ocorrency/ocorrencys.fxml";
 	public static final String MODAL_OCORRENCYS = "/front/xml/contact/ocorrency/modalOcorrency.fxml";
 	public static final String MANAGER_EVENT = "/front/xml/events/events.fxml";
+	public static final String MODAL_EVENT = "/front/xml/events/modalEvents.fxml";
 	
 }

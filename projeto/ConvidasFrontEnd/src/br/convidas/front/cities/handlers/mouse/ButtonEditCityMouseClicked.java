@@ -1,4 +1,4 @@
-package br.convidas.front.contact.handlers.mouse;
+package br.convidas.front.cities.handlers.mouse;
 
 import br.convidas.classes.Cidade;
 import br.convidas.front.cities.controller.ControllerCities;

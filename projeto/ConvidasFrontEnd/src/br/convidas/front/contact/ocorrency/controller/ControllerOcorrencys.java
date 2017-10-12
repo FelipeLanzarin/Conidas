@@ -140,8 +140,10 @@ public class ControllerOcorrencys implements Initializable{
 		
 		List<OcorrencyPF> ocorrencys = new ArrayList<>();
 		for (OcorrencyPF ocorrency : ocorrencyPFs) {
-			if(ocorrency.getDate().after(dateInicial) && ocorrency.getDate().before(dateFinal)){
-				ocorrencys.add(ocorrency);
+			if(ocorrency.getDate() != null){
+				if(ocorrency.getDate().after(dateInicial) && ocorrency.getDate().before(dateFinal)){
+					ocorrencys.add(ocorrency);
+				}
 			}
 		}
 		updateTablePF(ocorrencys);
@@ -188,7 +190,11 @@ public class ControllerOcorrencys implements Initializable{
 		Object[] array = new Object[3];
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		array[0] = sdf.format(ocorrencyPF.getDate());
+		if(ocorrencyPF.getDate() == null){
+			array[0] = "";
+		}else{
+			array[0] = sdf.format(ocorrencyPF.getDate());
+		}
 		array[1] = ocorrencyPF.getDescription();
 		
 	
@@ -271,7 +277,11 @@ public class ControllerOcorrencys implements Initializable{
 		Object[] array = new Object[3];
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		array[0] = sdf.format(ocorrencyPJ.getDate());
+		if(ocorrencyPJ.getDate() == null){
+			array[0] = "";
+		}else{
+			array[0] = sdf.format(ocorrencyPJ.getDate());
+		}
 		array[1] = ocorrencyPJ.getDescription();
 		
 	
