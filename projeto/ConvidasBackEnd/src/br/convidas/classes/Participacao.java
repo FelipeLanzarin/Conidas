@@ -18,11 +18,15 @@ public class Participacao {
     @GeneratedValue(generator="SEQ",strategy= GenerationType.SEQUENCE)
 	private Integer id;
 	@ManyToOne
-	@JoinColumn(name="pf_id", referencedColumnName="id")
+	@JoinColumn(name="pj_id", referencedColumnName="id")
 	private PessoaJuridica pessoaJuridica;
 	@ManyToOne
-	@JoinColumn(name="pj_id", referencedColumnName="id")
+	@JoinColumn(name="pf_id", referencedColumnName="id")
 	private PessoaFisica pessoaFisica;
+	@ManyToOne
+	@JoinColumn(name="event_id", referencedColumnName="id")
+	private Evento evento;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -40,5 +44,11 @@ public class Participacao {
 	}
 	public void setPessoaFisica(PessoaFisica pessoaFisica) {
 		this.pessoaFisica = pessoaFisica;
+	}
+	public Evento getEvento() {
+		return evento;
+	}
+	public void setEvento(Evento evento) {
+		this.evento = evento;
 	}
 }

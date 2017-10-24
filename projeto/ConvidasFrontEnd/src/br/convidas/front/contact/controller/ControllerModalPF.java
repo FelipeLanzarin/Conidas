@@ -1,6 +1,7 @@
 package br.convidas.front.contact.controller;
 
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import br.convidas.classes.Cidade;
@@ -95,6 +96,7 @@ public class ControllerModalPF implements Initializable{
 		}
 		
 		if(newPF){
+			pessoa.setCreationDate(new Date());
 			if(ManagerPF.create(pessoa)){
 				stage.close();
 				contacts.messageSucess("Pessoa cadastrada com sucesso!");

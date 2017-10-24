@@ -3,6 +3,7 @@ package br.convidas.front.main.controller;
 import br.convidas.front.cities.TelaCities;
 import br.convidas.front.contact.TelaConsultContacts;
 import br.convidas.front.contact.TelaContacts;
+import br.convidas.front.event.TelaConsultEvent;
 import br.convidas.front.event.TelaEvent;
 import br.convidas.tools.log.LogTools;
 import javafx.stage.Stage;
@@ -47,6 +48,11 @@ public class ControllerMain {
 	}
 	
 	public void clickButtonConsultEvents(){
-		
+		try {
+			TelaConsultEvent tc = new TelaConsultEvent();
+			tc.start(new Stage());
+		} catch (Exception e) {
+			LogTools.logError(e);
+		}
 	}
 }

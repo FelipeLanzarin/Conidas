@@ -1,5 +1,7 @@
 package br.convidas.classes;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,6 +29,8 @@ public class PessoaFisica{
 	private String bairro;
 	private String cep;
 	private Boolean newsletter;
+	@Column(name="creation_date")
+	private Date creationDate;
 	@ManyToOne
 	@JoinColumn(name="cidade_id", referencedColumnName="id")
 	private Cidade cidade;
@@ -111,6 +115,13 @@ public class PessoaFisica{
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	public Date getCreationDate() {
+		return creationDate;
+	}
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
 	}
 	@Override
 	public String toString() {

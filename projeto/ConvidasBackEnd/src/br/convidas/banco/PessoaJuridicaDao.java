@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import br.convidas.classes.Evento;
 import br.convidas.classes.PessoaJuridica;
 import br.convidas.tools.log.LogTools;
 
@@ -104,6 +105,20 @@ public class PessoaJuridicaDao {
 	}
 	
 	public List<PessoaJuridica> getPessoaJuridicas (){
+		EntityManager em = EntityManagerUtil.getEntityManager();
+		List<PessoaJuridica> pessoas = null;
+		try{
+			Query query = em.createQuery("FROM PessoaJuridica ORDER BY name");
+			pessoas = query.getResultList();
+		}catch (Exception e) {
+			LogTools.logError("erro ao obter pessoas fisicas no banco: "+ e.toString());
+		}finally{
+			em.close();
+		}
+		return pessoas;
+	}
+	
+	public List<PessoaJuridica> getPessoaJuridicasForParticipation(Evento event){
 		EntityManager em = EntityManagerUtil.getEntityManager();
 		List<PessoaJuridica> pessoas = null;
 		try{

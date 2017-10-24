@@ -6,6 +6,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.convidas.classes.Participacao;
+import br.convidas.classes.PessoaFisica;
+import br.convidas.classes.PessoaJuridica;
 import br.convidas.tools.log.LogTools;
 
 public class ParticipacaoDao {
@@ -25,22 +27,6 @@ public class ParticipacaoDao {
 			em.close();
 		}
 		
-		return true;
-	}
-	
-	public boolean updateParticipacao(Participacao participacao){
-		EntityManager em = EntityManagerUtil.getEntityManager();
-		try{
-			em.getTransaction().begin();
-			em.merge(participacao);
-			em.getTransaction().commit();
-		}catch (Exception e) {
-			LogTools.logError("erro ao alterar participacao no banco: "+ e.toString());
-			em.getTransaction().rollback();
-			return false;
-		}finally{
-			em.close();
-		}
 		return true;
 	}
 	
@@ -126,21 +112,105 @@ public class ParticipacaoDao {
 			em.close();
 		}
 		return participacao;
-	}
+	}	
 	
-	public List<Participacao> getParticipacaoOfEvent (Integer id){
+	public List<PessoaJuridica> getPossibleParticipacaoPJOfEvent (Integer id, String querySQL){
 		EntityManager em = EntityManagerUtil.getEntityManager();
-		List<Participacao> participacao = null;
+		List<PessoaJuridica> pessoas = null;
 		try{
-			String queryString = "FROM Participacao p WHERE p.pj_id = :id ORDER BY name";
-			Query query = em.createQuery(queryString);
+			Query query = em.createNativeQuery(querySQL, PessoaJuridica.class);
 			query.setParameter("id",id);
-			participacao = query.getResultList();
+			pessoas = query.getResultList();
 		}catch (Exception e) {
 			LogTools.logError("erro ao obter participacoes no banco: "+ e.toString());
 		}finally{
 			em.close();
 		}
-		return participacao;
+		return pessoas;
 	}
+	
+	public List<PessoaFisica> getPossibleParticipacaoPFOfEvent (Integer id, String querySQL){
+		EntityManager em = EntityManagerUtil.getEntityManager();
+		List<PessoaFisica> pessoas = null;
+		try{
+			Query query = em.createNativeQuery(querySQL, PessoaFisica.class);
+			query.setParameter("id",id);
+			pessoas = query.getResultList();
+		}catch (Exception e) {
+			LogTools.logError(e);
+		}finally{
+			em.close();
+		}
+		return pessoas;
+	}
+	
+	public List<PessoaJuridica> getParticipacaoPJOfEvent (Integer id, String querySQL){
+		EntityManager em = EntityManagerUtil.getEntityManager();
+		List<PessoaJuridica> pessoas = null;
+		try{
+			Query query = em.createNativeQuery(querySQL, PessoaJuridica.class);
+			query.setParameter("id",id);
+			pessoas = query.getResultList();
+		}catch (Exception e) {
+			LogTools.logError("erro ao obter participacoes no banco: "+ e.toString());
+		}finally{
+			em.close();
+		}
+		return pessoas;
+	}
+	
+	public List<PessoaFisica> getParticipacaoPFOfEvent (Integer id, String querySQL){
+		EntityManager em = EntityManagerUtil.getEntityManager();
+		List<PessoaFisica> pessoas = null;
+		try{
+			Query query = em.createNativeQuery(querySQL, PessoaFisica.class);
+			query.setParameter("id",id);
+			pessoas = query.getResultList();
+		}catch (Exception e) {
+			LogTools.logError(e);
+		}finally{
+			em.close();
+		}
+		return pessoas;
+	}
+	
+	public Participacao getParticipacaoOfPFAndEvent (Integer id, Integer eventId, String querySQL){
+		EntityManager em = EntityManagerUtil.getEntityManager();
+		List<Participacao> participacoes = null;
+		try{
+			Query query = em.createNativeQuery(querySQL, Participacao.class);
+			query.setParameter("id",id);
+			query.setParameter("eventId",eventId);
+			participacoes = query.getResultList();
+			if(participacoes != null && !participacoes.isEmpty()){
+				return participacoes.get(0);
+			}
+		}catch (Exception e) {
+			LogTools.logError(e);
+		}finally{
+			em.close();
+		}
+		return null;
+	}
+	
+	public Participacao getParticipacaoPJOfEventAndEvent (Integer id, Integer eventId, String querySQL){
+		EntityManager em = EntityManagerUtil.getEntityManager();
+		List<Participacao> participacoes = null;
+		try{
+			Query query = em.createNativeQuery(querySQL, Participacao.class);
+			query.setParameter("id",id);
+			query.setParameter("eventId",eventId);
+			participacoes = query.getResultList();
+			if(participacoes != null && !participacoes.isEmpty()){
+				return participacoes.get(0);
+			}
+		}catch (Exception e) {
+			LogTools.logError("erro ao obter participacoes no banco: "+ e.toString());
+		}finally{
+			em.close();
+		}
+		return null;
+	}
+	
+	
 }

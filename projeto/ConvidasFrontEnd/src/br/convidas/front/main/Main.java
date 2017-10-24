@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 
 import br.convidas.banco.EntityManagerUtil;
+import br.convidas.tools.backup.BackupUtils;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;
 import javafx.application.Application;
@@ -15,6 +16,8 @@ import javafx.stage.WindowEvent;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Alert.AlertType;
 
 
 public class Main extends Application {
@@ -68,6 +71,7 @@ public class Main extends Application {
 					stage.show();
 					stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 						public void handle(WindowEvent t) {
+							initBacku();
 							EntityManagerUtil.finalizefinalize();
 							Platform.exit();
 							System.exit(0);
@@ -79,6 +83,19 @@ public class Main extends Application {
 				}
 			}
 		});
+	}
+	
+	private void initBacku(){
+		final ButtonType btnSim = new ButtonType("Sim");
+		final ButtonType btnNao = new ButtonType("Não");
+		Alert alert = new Alert(AlertType.CONFIRMATION, "Você realizar o backup antes de sair do sistema?", btnSim, btnNao);
+		alert.setTitle("Backup!");
+		alert.getButtonTypes().setAll(btnSim, btnNao);
+		alert.showAndWait();
+		if (alert.getResult() == btnSim) {
+			BackupUtils backup = new BackupUtils();
+			backup.startBackup();
+		}
 	}
 	
 	public void failedConectBD(){

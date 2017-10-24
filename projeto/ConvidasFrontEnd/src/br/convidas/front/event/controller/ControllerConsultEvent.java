@@ -10,18 +10,14 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import br.convidas.classes.Evento;
-import br.convidas.front.event.TelaModalEvent;
-import br.convidas.front.event.handlers.mouse.ButtonDeleteMouseClickedEvent;
-import br.convidas.front.event.handlers.mouse.ButtonEditMouseClickedEvent;
+import br.convidas.front.event.handlers.mouse.ButtonSeeMouseClickedEvent;
 import br.convidas.manager.ManagerEvento;
-import br.convidas.tools.log.LogTools;
 import fx.tools.button.ButtonEventUtils;
 import fx.tools.mouse.MouseEnventControler;
 import fx.tools.table.FXTable;
 import fx.tools.utils.FXUtilsControl;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -30,48 +26,22 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class ControllerEvent implements Initializable{
+public class ControllerConsultEvent implements Initializable{
 	
 	private static final Double HEIGT_PANE = 485D;
-	private static String IMAGE_PENCIL	= "/front/images/manager/pencil.png";
+	private static String IMAGE_FOLDER	= "/front/images/pasta/folder2.jpg";
 	private static String ENGRENAGEM	= "/front/images/manager/engrenagem.png";
-	private static String IMAGE_LIXEIRA	= "/front/images/manager/lixeira.png";
 	private static String BORDER = "-fx-border-color: #ddd;";
 	private static String GRAY_BACKGROUND = "-fx-background-color: #f5f5f5;";
-	private static String BUTTON_DELETE_STYLE = "-fx-background-color: #d9534f; "
-											  + "-fx-border-color: #d43f3a; "
-											  + "-fx-background-radius: 3; "
-											  + "-fx-border-radius:3;";
-	private static String BUTTON_EDIT_STYLE = "-fx-background-color: #fff; "
-											+ "-fx-border-color: #8c8c8c; "
-											+ "-fx-background-radius: 3; "
-											+ "-fx-border-radius:3;";
-	
+
 	@FXML private Pane paneList;
 	@FXML private Pane paneListOut;
 	@FXML private TextField textName;
 	@FXML private DatePicker textDate;
 	
-	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-	
 	private Stage stage;
 	private List<Evento> listEvents;
-	
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		updateTableEvents(null);
-	}
-	
-	public void clickButtonNewEvent(){
-		try{
-			TelaModalEvent tme = new TelaModalEvent();
-			tme.setNewEvent(true);
-			tme.setControllerEvent(this);
-			tme.start(new Stage());
-		}catch (Exception e) {
-			LogTools.logError(e);
-		}
-	}
+	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	public void filterByName(){
 		String name = textName.getText().toLowerCase();
@@ -115,11 +85,8 @@ public class ControllerEvent implements Initializable{
 		return date;
 	}
 	
-	public void messageSucessEvent(String message){
-		Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
-		dialogoInfo.setTitle("Sucesso");
-		dialogoInfo.setHeaderText(message);
-		dialogoInfo.showAndWait();
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
 		updateTableEvents(null);
 	}
 	
@@ -143,7 +110,7 @@ public class ControllerEvent implements Initializable{
 		Image image = new Image(ENGRENAGEM);
 		ImageView img = new ImageView();
 		img.setImage(image);
-		Double[] sizeColumns = {200.0, 400.0, 115.0, 115.0, 210.0, 70.0};
+		Double[] sizeColumns = {200.0, 400.0, 115.0, 115.0, 240.0, 40.0};
 		Object[] header = 	{"Nome", "Local", "Data Inicial", "Data Final", "Cidade",  img};
 		table.setSizeColumns(sizeColumns);
 		table.addRown(header, null);
@@ -187,45 +154,27 @@ public class ControllerEvent implements Initializable{
 		array[4] = cidade;
 		
 		
-		Image image = new Image(IMAGE_PENCIL);
+		Image image = new Image(IMAGE_FOLDER);
 		ImageView img = new ImageView();
 		img.setImage(image);
 		Button edit= new Button(null, img);
 		edit.setLayoutX(10.0);
 		edit.setLayoutY(6.0);
-		edit.setPrefHeight(23.0);
-		edit.setMinHeight(23.0);
-		edit.setPrefWidth(23.0);
-		edit.setMinWidth(23.0);
-		edit.setStyle(BUTTON_EDIT_STYLE);
-		ButtonEditMouseClickedEvent bec = new ButtonEditMouseClickedEvent();
+		edit.setPrefHeight(20.0);
+		edit.setMinHeight(20.0);
+		edit.setPrefWidth(20.0);
+		edit.setMinWidth(20.0);
+		ButtonSeeMouseClickedEvent bec = new ButtonSeeMouseClickedEvent();
 		bec.setEvent(evento);
 		bec.setControllerEvent(this);
 		edit.setOnMouseClicked(MouseEnventControler.getMouseCliked(bec));
 		ButtonEventUtils.setEvents(edit);
 		
-		image = new Image(IMAGE_LIXEIRA);
-		img = new ImageView();
-		img.setImage(image);
-		Button delete= new Button(null, img);
-		delete.setLayoutX(40.0);
-		delete.setLayoutY(6.0);
-		delete.setMinHeight(22.0);
-		delete.setPrefHeight(22.0);
-		delete.setMinWidth(23.0);
-		delete.setPrefWidth(23.0);
-		delete.setStyle(BUTTON_DELETE_STYLE);
-		ButtonDeleteMouseClickedEvent bdc = new ButtonDeleteMouseClickedEvent();
-		bdc.setEvent(evento);
-		bdc.setControllerEvent(this);
-		delete.setOnMouseClicked(MouseEnventControler.getMouseCliked(bdc));
-		ButtonEventUtils.setEvents(delete);
-		
-		Button[] buttons = {delete, edit};
+		Button[] buttons = {edit};
 		array[5] = buttons;
 		return array;
 	}
-	
+
 	public Stage getStage() {
 		return stage;
 	}
@@ -234,5 +183,6 @@ public class ControllerEvent implements Initializable{
 		this.stage = stage;
 		FXUtilsControl.setScene(stage.getScene());
 	}
+	
 	
 }

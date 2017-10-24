@@ -3,6 +3,7 @@ package br.convidas.manager;
 import java.util.List;
 
 import br.convidas.banco.PessoaJuridicaDao;
+import br.convidas.classes.Evento;
 import br.convidas.classes.PessoaJuridica;
 
 public class ManagerPJ {
@@ -22,6 +23,15 @@ public class ManagerPJ {
 	}
 	
 	public static List<PessoaJuridica> getPessoaJuridicas() {
+		return getPessoaJuridicaDao().getPessoaJuridicas();
+	}
+	
+	/**
+	 * Responsavel por trazer as pessoas que nao participam do envento enviado por parametro
+	 * @param event
+	 * @return
+	 */
+	public static List<PessoaJuridica> getPessoaJuridicasForParticipation(Evento event) {
 		return getPessoaJuridicaDao().getPessoaJuridicas();
 	}
 	

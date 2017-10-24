@@ -1,23 +1,24 @@
-package br.convidas.front.contact.controller;
+package br.convidas.front.event.participation.controller;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import br.convidas.classes.Evento;
+import br.convidas.classes.Participacao;
 import br.convidas.classes.PessoaFisica;
 import br.convidas.classes.PessoaJuridica;
-import br.convidas.front.contact.handlers.mouse.ButtonSeeContactMouseClickedPF;
-import br.convidas.front.contact.handlers.mouse.ButtonSeeContactMouseClickedPJ;
+import br.convidas.front.event.participation.handlers.mouse.ButtonAddParticipationMouseClicked;
 import br.convidas.manager.ManagerPF;
 import br.convidas.manager.ManagerPJ;
+import br.convidas.manager.ManagerParticipacao;
 import fx.tools.button.ButtonEventUtils;
 import fx.tools.mouse.MouseEnventControler;
 import fx.tools.table.FXTable;
 import fx.tools.utils.FXUtilsControl;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -25,10 +26,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class ControllerConsultContacts implements Initializable{
+public class ControllerSelectPessoas implements Initializable{
 	
 	private static final String STYLE_BUTTON="-fx-background-color:  #ffffff; -fx-border-color:  #ddd; -fx-border-radius: 4; -fx-background-radius: 4";
-	private static String IMAGE_FOLDER	= "/front/images/pasta/folder2.jpg";
+	private static String IMAGE_MORE	= "/front/images/ok/add_1_32x32.png";
 	private static String ENGRENAGEM	= "/front/images/manager/engrenagem.png";
 	private static String BORDER = "-fx-border-color: #ddd;";
 	private static String GRAY_BACKGROUND = "-fx-background-color: #f5f5f5;";
@@ -46,15 +47,18 @@ public class ControllerConsultContacts implements Initializable{
 	@FXML private TextField textPJName;
 	
 	private Stage stage;
+	private Evento event;
 	private Boolean pageSelect = true;
 	private List<PessoaFisica> listPF;
 	private List<PessoaJuridica> listPJ;
+	private ControllerParticipation controllerParticipation;
+	
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		updateTablePF(null);
-		updateTablePJ(null);
+
 	}
+	
 	
 	public void clickButtonPF(){
 		selectPF();
@@ -64,14 +68,6 @@ public class ControllerConsultContacts implements Initializable{
 		selectPJ();
 	}
 	
-	
-	private void selectPJ(){
-		buttonPf.setStyle("");
-		buttonPj.setStyle(STYLE_BUTTON);
-		paneSelect.setLayoutX(buttonPj.getLayoutX()+1);
-		visiblePane(false);
-	}
-	
 	private void selectPF(){
 		buttonPj.setStyle("");
 		buttonPf.setStyle(STYLE_BUTTON);
@@ -79,35 +75,23 @@ public class ControllerConsultContacts implements Initializable{
 		visiblePane(true);
 	}
 	
-	private void visiblePane(Boolean pf){
-		textPJName.setVisible(!pf);
-		textCnpj.setVisible(!pf);
-		textCpf.setVisible(pf);
-		textPFName.setVisible(pf);
-		paneListPF.setVisible(pf);
-		paneListPJ.setVisible(!pf);
-		pageSelect  = pf;
-		if(pageSelect){
-			updatePaneWithListPf();
-		}else{
-			updatePaneWithListPJ();
-		}
+	public void updateParticipationPF(Participacao pf){
+		listPF.remove(pf.getPessoaFisica());
+		updateTablePF(listPF);
+		controllerParticipation.insertParticipationPF(pf.getPessoaFisica());
 	}
 	
-	public void messageSucess(String message){
-		Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
-		dialogoInfo.setTitle("Sucesso");
-		dialogoInfo.setHeaderText(message);
-		dialogoInfo.showAndWait();
-		updateTablePF(null);
+	public void updateParticipationPJ(Participacao pj){
+		listPJ.remove(pj.getPessoaJuridica());
+		updateTablePJ(listPJ);
+		controllerParticipation.insertParticipationPJ(pj.getPessoaJuridica());
 	}
 	
-	public void messageSucessPJ(String message){
-		Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
-		dialogoInfo.setTitle("Sucesso");
-		dialogoInfo.setHeaderText(message);
-		dialogoInfo.showAndWait();
-		updateTablePJ(null);
+	private void selectPJ(){
+		buttonPf.setStyle("");
+		buttonPj.setStyle(STYLE_BUTTON);
+		paneSelect.setLayoutX(buttonPj.getLayoutX()+1);
+		visiblePane(false);
 	}
 	
 	public void filterByCPF(){
@@ -120,7 +104,6 @@ public class ControllerConsultContacts implements Initializable{
 		}
 		updateTablePF(listPFSelect);
 	}
-	
 	public void filterByNamePJ(){
 		String name = textPJName.getText().toLowerCase();
 		List<PessoaJuridica> listPFSelect = new ArrayList<>();
@@ -156,22 +139,24 @@ public class ControllerConsultContacts implements Initializable{
 		updateTablePF(listPFSelect);
 	}
 	
-	private void updatePaneWithListPf(){
-		paneList.setPrefHeight(HEIGT_PANE);
-		if(paneList.getPrefHeight() < paneListPF.getPrefHeight()+100){
-			paneList.setPrefHeight(paneListPF.getPrefHeight()+100);
-		}
-	}
-	
-	private void updatePaneWithListPJ(){
-		paneList.setPrefHeight(HEIGT_PANE);
-		if(paneList.getPrefHeight() < paneListPJ.getPrefHeight()+100){
-			paneList.setPrefHeight(paneListPJ.getPrefHeight()+100);
+	private void visiblePane(Boolean pf){
+		textPJName.setVisible(!pf);
+		textCnpj.setVisible(!pf);
+		textCpf.setVisible(pf);
+		textPFName.setVisible(pf);
+		paneListPF.setVisible(pf);
+		paneListPJ.setVisible(!pf);
+		pageSelect  = pf;
+		if(pageSelect){
+			updatePaneWithListPf();
+		}else{
+			updatePaneWithListPJ();
 		}
 	}
 	
 	public FXTable updateTablePF(List<PessoaFisica> list){
 		if(list == null){
+			//TODO filtrar pessoas que nao participam do evento
 			list = ManagerPF.getPessoasFisicas();
 			listPF = list;
 		}
@@ -190,8 +175,8 @@ public class ControllerConsultContacts implements Initializable{
 		Image image = new Image(ENGRENAGEM);
 		ImageView img = new ImageView();
 		img.setImage(image);
-		Double[] sizeColumns = {230.0, 120.0, 330.0, 150.0, 150.0, 90.0, 40.0};
-		Object[] header = 	{"Nome", "CPF", "E-mail", "Relação", "Telefone", "Newsletter", img};
+		Double[] sizeColumns = {270.0, 120.0, 330.0, 150.0, 40.0};
+		Object[] header = 	{"Nome", "CPF", "E-mail", "Relação", img};
 		table.setSizeColumns(sizeColumns);
 		table.addRown(header, null);
 		table.setFont("SansSerif");
@@ -206,25 +191,17 @@ public class ControllerConsultContacts implements Initializable{
 		return table;
 	}
 	
-	
 	public Object[] populateRownPF(PessoaFisica pessoa){
 		if(pessoa == null){
 			return null;
 		}
-		Object[] array = new Object[7];
+		Object[] array = new Object[5];
 		array[0] = pessoa.getName();
 		array[1] = pessoa.getCpf();
 		array[2] = pessoa.getEmail();
 		array[3] = pessoa.getRelacao();
-		array[4] = pessoa.getTelefone();
 		
-		String newsletter = "Não";
-		if(pessoa.getNewsletter()){
-			newsletter = "Sim";
-		}
-		array[5] = newsletter;
-		
-		Image image = new Image(IMAGE_FOLDER);
+		Image image = new Image(IMAGE_MORE);
 		ImageView img = new ImageView();
 		img.setImage(image);
 		Button seeContact= new Button(null, img);
@@ -234,19 +211,29 @@ public class ControllerConsultContacts implements Initializable{
 		seeContact.setMinHeight(20.0);
 		seeContact.setPrefWidth(20.0);
 		seeContact.setMinWidth(20.0);
-		ButtonSeeContactMouseClickedPF bec = new ButtonSeeContactMouseClickedPF();
+		ButtonAddParticipationMouseClicked bec = new ButtonAddParticipationMouseClicked();
 		bec.setPessoaFisica(pessoa);
-		bec.setTelaContact(this);
+		bec.setController(this);
+		bec.setEvent(event);
 		seeContact.setOnMouseClicked(MouseEnventControler.getMouseCliked(bec));
 		ButtonEventUtils.setEvents(seeContact);
 		
 		Button[] buttons = {seeContact};
-		array[6] = buttons;
+		array[4] = buttons;
 		return array;
+	}
+	
+	
+	private void updatePaneWithListPf(){
+		paneList.setPrefHeight(HEIGT_PANE);
+		if(paneList.getPrefHeight() < paneListPF.getPrefHeight()+100){
+			paneList.setPrefHeight(paneListPF.getPrefHeight()+100);
+		}
 	}
 	
 	public FXTable updateTablePJ(List<PessoaJuridica> list){
 		if(list == null){
+			//TODO filtrar pessoas que nao participam do evento
 			list = ManagerPJ.getPessoaJuridicas();
 			listPJ = list;
 		}
@@ -265,8 +252,8 @@ public class ControllerConsultContacts implements Initializable{
 		Image image = new Image(ENGRENAGEM);
 		ImageView img = new ImageView();
 		img.setImage(image);
-		Double[] sizeColumns = {230.0, 120.0, 330.0, 150.0, 150.0, 90.0, 40.0};
-		Object[] header = 	{"Nome", "CNPJ", "E-mail", "Relação", "Telefone", "Newsletter", img};
+		Double[] sizeColumns = {270.0, 120.0, 330.0, 150.0, 40.0};
+		Object[] header = 	{"Nome", "CNPJ", "E-mail", "Relação", img};
 		table.setSizeColumns(sizeColumns);
 		table.addRown(header, null);
 		table.setFont("SansSerif");
@@ -285,20 +272,13 @@ public class ControllerConsultContacts implements Initializable{
 		if(pessoa == null){
 			return null;
 		}
-		Object[] array = new Object[7];
+		Object[] array = new Object[5];
 		array[0] = pessoa.getName();
 		array[1] = pessoa.getCnpj();
 		array[2] = pessoa.getEmail();
-		array[3] = pessoa.getContribuicao();
-		array[4] = pessoa.getTelefone();
+		array[3] = pessoa.getContribuicao();		
 		
-		String newsletter = "Não";
-		if(pessoa.getNewsletter()){
-			newsletter = "Sim";
-		}
-		array[5] = newsletter;
-		
-		Image image = new Image(IMAGE_FOLDER);
+		Image image = new Image(IMAGE_MORE);
 		ImageView img = new ImageView();
 		img.setImage(image);
 		Button seeContact= new Button(null, img);
@@ -308,16 +288,47 @@ public class ControllerConsultContacts implements Initializable{
 		seeContact.setMinHeight(20.0);
 		seeContact.setPrefWidth(20.0);
 		seeContact.setMinWidth(20.0);
-		ButtonSeeContactMouseClickedPJ bec = new ButtonSeeContactMouseClickedPJ();
+		ButtonAddParticipationMouseClicked bec = new ButtonAddParticipationMouseClicked();
 		bec.setPessoaJuridica(pessoa);
+		bec.setController(this);
+		bec.setEvent(event);
 		seeContact.setOnMouseClicked(MouseEnventControler.getMouseCliked(bec));
 		ButtonEventUtils.setEvents(seeContact);
 		
 		Button[] buttons = {seeContact};
-		array[6] = buttons;
+		array[4] = buttons;
 		return array;
 	}
 	
+	private void updatePaneWithListPJ(){
+		paneList.setPrefHeight(HEIGT_PANE);
+		if(paneList.getPrefHeight() < paneListPJ.getPrefHeight()+100){
+			paneList.setPrefHeight(paneListPJ.getPrefHeight()+100);
+		}
+	}
+	
+	public Evento getEvent() {
+		return event;
+	}
+
+	public void setEvent(Evento event) {
+		this.event = event;
+		listPF = ManagerParticipacao.getPossibleParticipacaoPFOfEvent(event);
+		listPJ = ManagerParticipacao.getPossibleParticipacaoPJOfEvent(event);
+		updateTablePF(listPF);
+		updateTablePJ(listPJ);
+	}
+
+
+	public ControllerParticipation getControllerParticipation() {
+		return controllerParticipation;
+	}
+
+
+	public void setControllerParticipation(ControllerParticipation controllerParticipation) {
+		this.controllerParticipation = controllerParticipation;
+	}
+
 	public Stage getStage() {
 		return stage;
 	}
@@ -327,20 +338,5 @@ public class ControllerConsultContacts implements Initializable{
 		FXUtilsControl.setScene(stage.getScene());
 	}
 
-	public List<PessoaFisica> getListPF() {
-		return listPF;
-	}
-
-	public void setListPF(List<PessoaFisica> listPF) {
-		this.listPF = listPF;
-	}
-
-	public List<PessoaJuridica> getListPJ() {
-		return listPJ;
-	}
-
-	public void setListPJ(List<PessoaJuridica> listPJ) {
-		this.listPJ = listPJ;
-	}
 	
 }
