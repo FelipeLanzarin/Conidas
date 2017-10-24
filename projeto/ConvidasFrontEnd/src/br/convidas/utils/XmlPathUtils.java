@@ -3,6 +3,7 @@ package br.convidas.utils;
 public class XmlPathUtils {
 	
 	public static final String MAIN = "/front/xml/main/main.fxml";
+	public static final String BK_BD = "/front/xml/main/loadBackup.fxml";
 	public static final String LOAD_BD = "/front/xml/main/loadBd.fxml";
 	public static final String CONTACTS = "/front/xml/contact/contacts.fxml";
 	public static final String CONSULT_CONTACTS = "/front/xml/contact/consultContacts.fxml";

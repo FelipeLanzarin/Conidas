@@ -88,15 +88,33 @@ public class Main extends Application {
 	private void initBacku(){
 		final ButtonType btnSim = new ButtonType("Sim");
 		final ButtonType btnNao = new ButtonType("Não");
-		Alert alert = new Alert(AlertType.CONFIRMATION, "Você realizar o backup antes de sair do sistema?", btnSim, btnNao);
+		Alert alert = new Alert(AlertType.CONFIRMATION, "Você deseja realizar o backup antes de sair do sistema?", btnSim, btnNao);
 		alert.setTitle("Backup!");
 		alert.getButtonTypes().setAll(btnSim, btnNao);
 		alert.showAndWait();
 		if (alert.getResult() == btnSim) {
-			BackupUtils backup = new BackupUtils();
-			backup.startBackup();
+			try {
+				URL arquivoFXML = getClass().getResource(XmlPathUtils.BK_BD);
+				Parent fxmlParent;
+				Stage stage = new Stage();
+				FXMLLoader loader = new FXMLLoader(arquivoFXML);
+				fxmlParent = (Parent) loader.load();
+				stage.setScene(new Scene(fxmlParent));
+				stage.setResizable(false);
+				stage.setTitle("Convidas");
+				stage.show();
+				BackupUtils backup = new BackupUtils();
+				backup.startBackup();
+				Alert alertBK = new Alert(AlertType.INFORMATION, "O programa será encerrado");
+				alertBK.setHeaderText("Backup realizado com sucesso!");
+				alertBK.setTitle("Backup!");
+				alertBK.showAndWait();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
+	
 	
 	public void failedConectBD(){
 		Platform.runLater(new Runnable() {
