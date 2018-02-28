@@ -18,6 +18,7 @@ import fx.tools.utils.FXUtilsControl;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -53,10 +54,11 @@ public class ControllerCities implements Initializable{
 	
 	
 	public void filterCities(){
-		String city = textNameFilter.getText();
+		String city = textNameFilter.getText().toLowerCase();
 		List<Cidade> listCidadesSelects = new ArrayList<>();
 		for (Cidade cidade : listCidades) {
-			if(cidade.getName().contains(city)){
+			String name = cidade.getName().toLowerCase();
+			if(name.contains(city)){
 				listCidadesSelects.add(cidade);
 			}
 		}

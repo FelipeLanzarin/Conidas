@@ -138,15 +138,27 @@ public class ControllerOcorrencys implements Initializable{
 			dateFinal = c.getTime();
 		}
 		
-		List<OcorrencyPF> ocorrencys = new ArrayList<>();
-		for (OcorrencyPF ocorrency : ocorrencyPFs) {
-			if(ocorrency.getDate() != null){
-				if(ocorrency.getDate().after(dateInicial) && ocorrency.getDate().before(dateFinal)){
-					ocorrencys.add(ocorrency);
+		if(ocorrencyPFs != null){
+			List<OcorrencyPF> ocorrencys = new ArrayList<>();
+			for (OcorrencyPF ocorrency : ocorrencyPFs) {
+				if(ocorrency.getDate() != null){
+					if(ocorrency.getDate().after(dateInicial) && ocorrency.getDate().before(dateFinal)){
+						ocorrencys.add(ocorrency);
+					}
 				}
 			}
+			updateTablePF(ocorrencys);
+		}else if(ocorrencyPJs != null){
+			List<OcorrencyPJ> ocorrencys = new ArrayList<>();
+			for (OcorrencyPJ ocorrency : ocorrencyPJs) {
+				if(ocorrency.getDate() != null){
+					if(ocorrency.getDate().after(dateInicial) && ocorrency.getDate().before(dateFinal)){
+						ocorrencys.add(ocorrency);
+					}
+				}
+			}
+			updateTablePJ(ocorrencys);
 		}
-		updateTablePF(ocorrencys);
 	}
 
 	

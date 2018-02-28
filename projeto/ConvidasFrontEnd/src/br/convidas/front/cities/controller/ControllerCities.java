@@ -54,10 +54,11 @@ public class ControllerCities implements Initializable{
 	private ControllerModalPF controllerModalPF;
 	
 	public void filterCities(){
-		String city = textNameFilter.getText();
+		String city = textNameFilter.getText().toLowerCase();
 		List<Cidade> listCidadesSelects = new ArrayList<>();
 		for (Cidade cidade : listCidades) {
-			if(cidade.getName().contains(city)){
+			String name = cidade.getName().toLowerCase();
+			if(name.contains(city)){
 				listCidadesSelects.add(cidade);
 			}
 		}
@@ -98,7 +99,7 @@ public class ControllerCities implements Initializable{
 		try {
 			TelaModalCity tmc = new TelaModalCity();
 			tmc.setNewCity(true);
-			tmc.setControllerCities(this);
+//			tmc.setControllerCities(this);
 			tmc.start(new Stage());
 		} catch (Exception e) {
 			LogTools.logError(e);

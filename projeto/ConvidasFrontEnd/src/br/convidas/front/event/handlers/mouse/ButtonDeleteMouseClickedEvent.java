@@ -27,7 +27,7 @@ public class ButtonDeleteMouseClickedEvent implements EventAction{
 				if(ManagerEvento.delete(event)){
 					Alert dialog = new Alert(Alert.AlertType.INFORMATION);
 					dialog.setTitle("Sucesso!");
-					dialog.setHeaderText("Pessoa excluída com sucesso");
+					dialog.setHeaderText("Evento excluída com sucesso");
 					dialog.showAndWait();
 					controllerEvent.updateTableEvents(null);
 				}else{

@@ -16,7 +16,7 @@ public class ButtonEditCityMouseClicked implements EventAction {
 	public void action() {
 		try {
 			TelaModalCity tmc = new TelaModalCity();
-			tmc.setControllerCities(controllerCities);
+//			tmc.setControllerCities(controllerCities);
 			tmc.setCidade(cidade);
 			tmc.setNewCity(false);
 			tmc.start(new Stage());

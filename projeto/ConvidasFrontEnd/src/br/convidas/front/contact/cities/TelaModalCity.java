@@ -5,6 +5,7 @@ import java.net.URL;
 
 import br.convidas.classes.Cidade;
 import br.convidas.front.cities.controller.ControllerCities;
+import br.convidas.front.cities.controller.ControllerCityRelationManager;
 import br.convidas.front.cities.controller.ControllerModalCity;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;
@@ -18,7 +19,7 @@ public class TelaModalCity extends Application {
 	
 	private Boolean newCity;
 	private Cidade cidade;
-	private ControllerCities controllerCities;
+	private ControllerCityRelationManager controllerCities;
 	
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -60,14 +61,12 @@ public class TelaModalCity extends Application {
 		this.cidade = cidade;
 	}
 
-	public ControllerCities getControllerCities() {
+	public ControllerCityRelationManager getControllerCities() {
 		return controllerCities;
 	}
 
-	public void setControllerCities(ControllerCities controllerCities) {
+	public void setControllerCities(ControllerCityRelationManager controllerCities) {
 		this.controllerCities = controllerCities;
 	}
-
-	
 
 }

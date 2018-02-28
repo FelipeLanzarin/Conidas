@@ -68,7 +68,7 @@ public class ControllerModalEvent {
 		if(newEvent){
 			if(ManagerEvento.create(event)){
 				stage.close();
-				controllerEvent.messageSucessEvent("Evento cadastrada com sucesso!");
+				controllerEvent.messageSucessEvent("Evento cadastrado com sucesso!");
 			}else{
 				Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
 				dialogoInfo.setTitle("Erro!");

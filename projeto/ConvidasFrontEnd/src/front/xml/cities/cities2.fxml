@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="600.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.convidas.front.cities.controller.ControllerCityRelationManager">
+   <children>
+      <Pane layoutX="25.0" layoutY="19.0" prefHeight="516.0" prefWidth="551.0" style="-fx-background-color: #d9edf7; -fx-border-color: #bce8f1; -fx-border-radius: 4; -fx-background-radius: 4;">
+         <children>
+            <Label fx:id="labelTitle" layoutX="22.0" layoutY="14.0" prefHeight="23.0" prefWidth="325.0" text="Cidades" textFill="#31708f">
+               <font>
+                  <Font name="SansSerif Regular" size="16.0" />
+               </font>
+            </Label>
+            <Pane layoutX="1.0" layoutY="46.0" prefHeight="469.0" prefWidth="549.0" style="-fx-background-color: #fff; -fx-background-radius: 4;">
+               <children>
+                  <Label layoutX="35.0" layoutY="25.0" text="Filtrar">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textNameFilter" layoutX="90.0" layoutY="20.0" onKeyReleased="#filterCities" prefHeight="30.0" prefWidth="414.0" promptText="Nome" />
+                  <Button fx:id="buttonDelete" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="364.0" layoutY="64.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#clickButtonDelete" prefHeight="30.0" prefWidth="140.0" style="-fx-border-color: #cd4b47; -fx-background-color: #d9534f; -fx-border-radius: 2; -fx-background-radius: 2;" text="Excluir" textAlignment="CENTER" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="SansSerif Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" translateX="-49.0">
+                           <image>
+                              <Image url="@../../images/manager/lixeira.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="buttonEdit" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="212.0" layoutY="64.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#clickButtonEdit" prefHeight="30.0" prefWidth="140.0" style="-fx-border-color: #2e6da4; -fx-background-color: #337ab7; -fx-border-radius: 2; -fx-background-radius: 2;" text="Alterar" textAlignment="CENTER" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="SansSerif Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" translateX="-49.0">
+                           <image>
+                              <Image url="@../../images/manager/editor.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="buttonNew" alignment="CENTER" contentDisplay="CENTER" layoutX="63.0" layoutY="64.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#clickButtonNew" prefHeight="30.0" prefWidth="140.0" style="-fx-border-color: #50af49; -fx-background-color: #58b551; -fx-border-radius: 2; -fx-background-radius: 2;" text="Cadastrar" textAlignment="CENTER" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="SansSerif Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" translateX="-49.0">
+                           <image>
+                              <Image url="@../../images/manager/add-user_white2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TableView fx:id="table" layoutX="33.0" layoutY="114.0" onMouseClicked="#clickTable" prefHeight="331.0" prefWidth="483.0" stylesheets="@../../css/genericCss.css">
+                    <columns>
+                      <TableColumn fx:id="columnOne" editable="false" maxWidth="308.0" minWidth="308.0" prefWidth="308.0" resizable="false" text="Nome" />
+                      <TableColumn fx:id="columnTwo" editable="false" maxWidth="51.0" minWidth="51.0" prefWidth="51.0" resizable="false" text="UF" />
+                        <TableColumn fx:id="columnThree" editable="false" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" resizable="false" text="País" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane layoutX="1.0" layoutY="46.0" prefHeight="4.0" prefWidth="549.0" style="-fx-background-color: #d9edf7;" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

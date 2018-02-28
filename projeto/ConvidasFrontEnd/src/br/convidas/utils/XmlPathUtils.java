@@ -10,7 +10,7 @@ public class XmlPathUtils {
 	public static final String CONTACT_MODAL_PF = "/front/xml/contact/modalPF.fxml";
 	public static final String CONTACT_MODAL_PJ = "/front/xml/contact/modalPJ.fxml";
 	public static final String CITIES = "/front/xml/contact/cities/cities.fxml";
-	public static final String MANAGER_CITIES = "/front/xml/cities/cities.fxml";
+	public static final String MANAGER_CITIES = "/front/xml/cities/cities2.fxml";
 	public static final String MODAL_MANAGER_CITIES = "/front/xml/cities/modalCity.fxml";
 	public static final String CONTACT_MODAL_CONSULT_PF = "/front/xml/contact/modalConsultPF.fxml";
 	public static final String CONTACT_MODAL_CONSULT_PJ = "/front/xml/contact/modalConsultPJ.fxml";

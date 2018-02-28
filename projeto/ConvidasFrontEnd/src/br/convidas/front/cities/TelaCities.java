@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 
 import br.convidas.front.cities.controller.ControllerCities;
+import br.convidas.front.cities.controller.ControllerCityRelationManager;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;
 import javafx.application.Application;
@@ -24,9 +25,13 @@ public class TelaCities extends Application {
 			fxmlParent = (Parent) loader.load();
 			stage.setResizable(false);
 			stage.setScene(new Scene(fxmlParent));
-			ControllerCities control = (ControllerCities) loader.getController();
+//			ControllerCities control = (ControllerCities) loader.getController();
+//			control.setStage(stage);
+//			control.updateTablePF(null);
+//			stage.setTitle("Cidades");
+			ControllerCityRelationManager control = (ControllerCityRelationManager) loader.getController();
 			control.setStage(stage);
-			control.updateTablePF(null);
+			control.createTable();
 			stage.setTitle("Cidades");
 			stage.show();
 		

@@ -26,7 +26,7 @@ public class ControllerModalCity implements Initializable{
 	@FXML private ComboBox<String> comboStates;
 	
 	private Stage stage;
-	private ControllerCities cities;
+	private ControllerCityRelationManager cities;
 	private Boolean newCity;
 	private Cidade cidade;
 	private List<String> states;
@@ -162,11 +162,11 @@ public class ControllerModalCity implements Initializable{
 		this.states = states;
 	}
 
-	public ControllerCities getCities() {
+	public ControllerCityRelationManager getCities() {
 		return cities;
 	}
 
-	public void setCities(ControllerCities cities) {
+	public void setCities(ControllerCityRelationManager cities) {
 		this.cities = cities;
 		states = new ArrayList<>();
 		states.add("Sem estado");
