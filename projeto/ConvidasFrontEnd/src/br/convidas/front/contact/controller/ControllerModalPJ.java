@@ -41,7 +41,7 @@ public class ControllerModalPJ implements Initializable{
 	@FXML private Label labelTitle;
 	
 	private Stage stage;
-	private ControllerContacts contacts;
+	private ControllerContactsRelationManager contacts;
 	private Boolean newPJ;
 	private PessoaJuridica pessoa;
 	private Cidade cidadeSelect;
@@ -179,10 +179,10 @@ public class ControllerModalPJ implements Initializable{
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
-	public ControllerContacts getContacts() {
+	public ControllerContactsRelationManager getContacts() {
 		return contacts;
 	}
-	public void setContacts(ControllerContacts contacts) {
+	public void setContacts(ControllerContactsRelationManager contacts) {
 		this.contacts = contacts;
 	}
 	public Boolean getNewPF() {

@@ -115,5 +115,35 @@ public class PessoaFisicaDao {
 		}
 		return pessoas;
 	}
+	
+	public List<PessoaFisica> getPessoaFisicasOthers (String querySQL){
+		EntityManager em = EntityManagerUtil.getEntityManager();
+		List<PessoaFisica> pessoas = null;
+		try{
+			Query query = em.createNativeQuery(querySQL, PessoaFisica.class);
+			pessoas = query.getResultList();
+		}catch (Exception e) {
+			LogTools.logError("erro ao obter pessoas fisicas no banco: "+ e.toString());
+		}finally{
+			em.close();
+		}
+		return pessoas;
+	}
+	
+	public List<PessoaFisica> getPessoaFisicas (String param,String param2){
+		EntityManager em = EntityManagerUtil.getEntityManager();
+		List<PessoaFisica> pessoas = null;
+		try{
+			Query query = em.createQuery("FROM PessoaFisica where name like :name or name like :name2 ORDER BY name");
+			query.setParameter("name", param+"%");
+			query.setParameter("name2", param2+"%");
+			pessoas = query.getResultList();
+		}catch (Exception e) {
+			LogTools.logError("erro ao obter pessoas fisicas no banco: "+ e.toString());
+		}finally{
+			em.close();
+		}
+		return pessoas;
+	}
 
 }

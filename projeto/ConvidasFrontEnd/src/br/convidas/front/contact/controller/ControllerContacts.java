@@ -84,7 +84,7 @@ public class ControllerContacts implements Initializable{
 		try {
 			TelaModalPF tmpf = new TelaModalPF();
 			tmpf.setNewPf(true);
-			tmpf.setControllerContacts(this);
+//			tmpf.setControllerContacts(this);
 			tmpf.start(new Stage());
 		} catch (Exception e) {
 			LogTools.logError(e);
@@ -96,7 +96,7 @@ public class ControllerContacts implements Initializable{
 		try {
 			TelaModalPJ tmpJ = new TelaModalPJ();
 			tmpJ.setNewPf(true);
-			tmpJ.setControllerContacts(this);
+//			tmpJ.setControllerContacts(this);
 			tmpJ.start(new Stage());
 		} catch (Exception e) {
 			LogTools.logError(e);

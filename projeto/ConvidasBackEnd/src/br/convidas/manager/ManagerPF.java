@@ -25,6 +25,15 @@ public class ManagerPF {
 		return getPessoaFisicaDao().getPessoaFisicas();
 	}
 	
+	public static List<PessoaFisica> getPessoasFisicas(String param, String param2) {
+		return getPessoaFisicaDao().getPessoaFisicas(param, param2);
+	}
+	
+	public static List<PessoaFisica> getPessoaFisicasOthers (){
+		String querySQL = "SELECT * FROM pessoa_fisica WHERE name ~ E'^[^a-zA-Z].*';";
+		return getPessoaFisicaDao().getPessoaFisicasOthers(querySQL);
+	}
+	
 	private static PessoaFisicaDao getPessoaFisicaDao(){
 		if(pfd == null){
 			pfd = new PessoaFisicaDao();

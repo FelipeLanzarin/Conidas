@@ -3,7 +3,7 @@ package br.convidas.front.event;
 import java.io.IOException;
 import java.net.URL;
 
-import br.convidas.front.event.controller.ControllerEvent;
+import br.convidas.front.event.controller.ControllerEventRelationManager;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;
 import javafx.application.Application;
@@ -24,10 +24,9 @@ public class TelaEvent extends Application {
 			fxmlParent = (Parent) loader.load();
 			stage.setResizable(false);
 			stage.setScene(new Scene(fxmlParent));
-			ControllerEvent control = (ControllerEvent) loader.getController();
+			ControllerEventRelationManager control = (ControllerEventRelationManager) loader.getController();
 			control.setStage(stage);
-//			control.updateTablePF(null);
-			stage.setTitle("Cidades");
+			stage.setTitle("Eventos");
 			stage.show();
 		
 		} catch (IOException e) {

@@ -66,7 +66,7 @@ public class ControllerEvent implements Initializable{
 		try{
 			TelaModalEvent tme = new TelaModalEvent();
 			tme.setNewEvent(true);
-			tme.setControllerEvent(this);
+//			tme.setControllerEvent(this);
 			tme.start(new Stage());
 		}catch (Exception e) {
 			LogTools.logError(e);

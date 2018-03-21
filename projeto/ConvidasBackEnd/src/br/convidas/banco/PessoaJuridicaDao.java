@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.convidas.classes.Evento;
+import br.convidas.classes.PessoaFisica;
 import br.convidas.classes.PessoaJuridica;
 import br.convidas.tools.log.LogTools;
 
@@ -109,6 +110,36 @@ public class PessoaJuridicaDao {
 		List<PessoaJuridica> pessoas = null;
 		try{
 			Query query = em.createQuery("FROM PessoaJuridica ORDER BY name");
+			pessoas = query.getResultList();
+		}catch (Exception e) {
+			LogTools.logError("erro ao obter pessoas fisicas no banco: "+ e.toString());
+		}finally{
+			em.close();
+		}
+		return pessoas;
+	}
+	
+	public List<PessoaJuridica> getPessoaJuridicasOthers (String querySQL){
+		EntityManager em = EntityManagerUtil.getEntityManager();
+		List<PessoaJuridica> pessoas = null;
+		try{
+			Query query = em.createNativeQuery(querySQL, PessoaJuridica.class);
+			pessoas = query.getResultList();
+		}catch (Exception e) {
+			LogTools.logError("erro ao obter pessoas fisicas no banco: "+ e.toString());
+		}finally{
+			em.close();
+		}
+		return pessoas;
+	}
+	
+	public List<PessoaJuridica> getPessoaJuridicas (String param,String param2){
+		EntityManager em = EntityManagerUtil.getEntityManager();
+		List<PessoaJuridica> pessoas = null;
+		try{
+			Query query = em.createQuery("FROM PessoaJuridica where name like :name or name like :name2 ORDER BY name");
+			query.setParameter("name", param+"%");
+			query.setParameter("name2", param2+"%");
 			pessoas = query.getResultList();
 		}catch (Exception e) {
 			LogTools.logError("erro ao obter pessoas fisicas no banco: "+ e.toString());

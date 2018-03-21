@@ -41,7 +41,7 @@ public class LogTools {
 	
 	public static void logWarning(String log){
 		String warning = generateLog() + " Warning ** " + log;
-		writeLog(warning);
+		writeLog(log);
 	}
 	
 	private static String generateLog(){

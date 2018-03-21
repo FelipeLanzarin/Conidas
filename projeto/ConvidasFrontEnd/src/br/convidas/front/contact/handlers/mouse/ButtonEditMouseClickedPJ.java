@@ -17,7 +17,7 @@ public class ButtonEditMouseClickedPJ implements EventAction{
 		try {
 			TelaModalPJ tme = new TelaModalPJ();
 			tme.setPessoaJuridica(pessoaJuridica);
-			tme.setControllerContacts(telaContact);
+//			tme.setControllerContacts(telaContact);
 			tme.setNewPf(false);
 			tme.start(new Stage());
 		} catch (Exception e) {

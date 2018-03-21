@@ -5,6 +5,7 @@ import java.net.URL;
 
 import br.convidas.classes.PessoaJuridica;
 import br.convidas.front.contact.controller.ControllerContacts;
+import br.convidas.front.contact.controller.ControllerContactsRelationManager;
 import br.convidas.front.contact.controller.ControllerModalPJ;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;
@@ -17,7 +18,7 @@ import javafx.stage.Stage;
 public class TelaModalPJ extends Application {
 	
 	private Boolean newPf;
-	private ControllerContacts controllerContacts;
+	private ControllerContactsRelationManager controllerContacts;
 	private PessoaJuridica pessoaJuridica;
 	
 	@Override
@@ -52,11 +53,11 @@ public class TelaModalPJ extends Application {
 		this.newPf = newPf;
 	}
 
-	public ControllerContacts getControllerContacts() {
+	public ControllerContactsRelationManager getControllerContacts() {
 		return controllerContacts;
 	}
 
-	public void setControllerContacts(ControllerContacts controllerContacts) {
+	public void setControllerContacts(ControllerContactsRelationManager controllerContacts) {
 		this.controllerContacts = controllerContacts;
 	}
 

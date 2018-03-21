@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 
 import br.convidas.classes.Evento;
-import br.convidas.front.event.controller.ControllerEvent;
+import br.convidas.front.event.controller.ControllerEventRelationManager;
 import br.convidas.front.event.controller.ControllerModalEvent;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;
@@ -18,7 +18,7 @@ public class TelaModalEvent extends Application{
 	
 	private Boolean newEvent;
 	private Evento event;
-	private ControllerEvent controllerEvent;
+	private ControllerEventRelationManager controllerEvent;
 	
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -60,14 +60,13 @@ public class TelaModalEvent extends Application{
 		this.event = event;
 	}
 
-
-	public ControllerEvent getControllerEvent() {
+	public ControllerEventRelationManager getControllerEvent() {
 		return controllerEvent;
 	}
 
-
-	public void setControllerEvent(ControllerEvent controllerEvent) {
+	public void setControllerEvent(ControllerEventRelationManager controllerEvent) {
 		this.controllerEvent = controllerEvent;
 	}
+	
 }
 	

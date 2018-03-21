@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="1234.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.convidas.front.contact.controller.ControllerTeste">
+   <children>
+      <TableView fx:id="table" layoutX="50.0" layoutY="115.0" onMouseClicked="#clickTable" prefHeight="374.0" prefWidth="1106.0" stylesheets="@../../css/genericCss.css">
+         <columns>
+            <TableColumn fx:id="columnOne" editable="false" maxWidth="285.0" minWidth="285.0" prefWidth="285.0" resizable="false" text="Nome" />
+            <TableColumn fx:id="columnTwo" editable="false" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" resizable="false" text="CPF" />
+            <TableColumn fx:id="columnThree" editable="false" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" resizable="false" text="E-MAIL" />
+            <TableColumn fx:id="columnFour" editable="false" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" resizable="false" text="Relação" />
+            <TableColumn fx:id="columnFive" editable="false" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" resizable="false" text="Telefone" />
+            <TableColumn fx:id="columnSix" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" resizable="false" text="Newsletter" />
+         </columns>
+      </TableView>
+   </children>
+</Pane>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="main" fx:id="mainPane" maxHeight="750.0" maxWidth="1220.0" minHeight="649.0" minWidth="900.0" prefHeight="708.0" prefWidth="1220.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.convidas.front.contact.controller.ControllerConsultContacts">
+   <top>
+      <GridPane id="grid_pane" fx:id="topGridPane" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.0" minWidth="10.0" prefWidth="84.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="976.0" minWidth="10.0" prefWidth="976.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.0" minWidth="10.0" prefWidth="116.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="25.0" minHeight="2.0" prefHeight="3.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="35.0" prefWidth="767.0" text="Consulta de Contatos" textFill="#777777" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="63.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../../images/contact/mans_2.png" />
+               </image>
+            </ImageView>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </GridPane>
+   </top>
+   <center>
+<!--       <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER"> -->
+<!--          <children> -->
+            <ScrollPane fx:id="scrollPane" prefHeight="508.0" prefWidth="900.0" style="-fx-background-color: #ffffff;">
+              <content>
+                <AnchorPane fx:id="anchorPane" minHeight="615.0" minWidth="-Infinity" prefWidth="1218.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Pane fx:id="paneAlphabet" layoutX="8.0" layoutY="33.0" prefHeight="70.0" prefWidth="1185.0" style="-fx-border-color: #ddd; -fx-background-color: #f5f5f5; -fx-border-radius: 10; -fx-background-radius: 10;">
+                           <children>
+                        <Button fx:id="buttonPf" layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#clickButtonPF" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #ffffff; -fx-border-color: #ddd; -fx-border-radius: 4; -fx-background-radius: 4;" text="Pessoa Física" textFill="#333333">
+                           <font>
+                              <Font name="SansSerif Regular" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="buttonPj" layoutX="145.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#clickButtonPJ" prefHeight="40.0" prefWidth="120.0" text="Pessoa Jurídica" textFill="#333333">
+                           <font>
+                              <Font name="SansSerif Regular" size="14.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="a" fill="#939e97" layoutX="300.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="SansSerif Regular" size="22.0" />
+                           </font>
+                        </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </Pane>
+                  <Pane fx:id="paneList" layoutX="8.0" layoutY="94.0" prefHeight="485.0" prefWidth="1185.0" style="-fx-border-color: #ddd; -fx-background-color: #fff; -fx-opacity: 10000;">
+                     <children>
+                        <Pane fx:id="paneSelect" layoutX="26.0" layoutY="-6.0" prefHeight="11.0" prefWidth="117.0" style="-fx-background-color: #fff;" />
+                        <Text layoutX="38.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultar">
+                           <font>
+                              <Font name="SansSerif Regular" size="21.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="textCpf" layoutX="38.0" layoutY="64.0" onKeyReleased="#filterByCPF" prefHeight="31.0" prefWidth="247.0" promptText="CPF" />
+                        <TextField fx:id="textPFName" layoutX="308.0" layoutY="64.0" onKeyReleased="#filterByNamePF" prefHeight="31.0" prefWidth="836.0" promptText="Nome" />
+                        <TextField fx:id="textCnpj" layoutX="38.0" layoutY="64.0" onKeyReleased="#filterByCNPJ" prefHeight="31.0" prefWidth="247.0" promptText="CNPJ" visible="false" />
+                        <TextField fx:id="textPJName" layoutX="308.0" layoutY="64.0" onKeyReleased="#filterByNamePJ" prefHeight="31.0" prefWidth="836.0" promptText="Nome" visible="false" />
+                        <TableView fx:id="table" layoutX="40.0" layoutY="105.0" onMouseClicked="#clickTable" prefHeight="374.0" prefWidth="1106.0" stylesheets="@../../css/genericCss.css">
+                           <columns>
+                              <TableColumn fx:id="columnOne" editable="false" maxWidth="285.0" minWidth="285.0" prefWidth="285.0" resizable="false" text="Nome" />
+                              <TableColumn fx:id="columnTwo" editable="false" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" resizable="false" text="CPF" />
+                              <TableColumn fx:id="columnThree" editable="false" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" resizable="false" text="E-MAIL" />
+                              <TableColumn fx:id="columnFour" editable="false" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" resizable="false" text="Relação" />
+                              <TableColumn fx:id="columnFive" editable="false" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" resizable="false" text="Telefone" />
+                              <TableColumn fx:id="columnSix" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" resizable="false" text="Newsletter" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="tablePJ" layoutX="40.0" layoutY="105.0" onMouseClicked="#clickTablePj" prefHeight="374.0" prefWidth="1106.0" stylesheets="@../../css/genericCss.css" visible="false">
+                           <columns>
+                              <TableColumn fx:id="columnOnePj" editable="false" maxWidth="285.0" minWidth="285.0" prefWidth="285.0" resizable="false" text="Nome" />
+                              <TableColumn fx:id="columnTwoPj" editable="false" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" resizable="false" text="CNPJ" />
+                              <TableColumn fx:id="columnThreePj" editable="false" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" resizable="false" text="E-MAIL" />
+                              <TableColumn fx:id="columnFourPj" editable="false" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" resizable="false" text="Reponsavel" />
+                              <TableColumn fx:id="columnFivePj" editable="false" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" resizable="false" text="Telefone" />
+                              <TableColumn fx:id="columnSixPj" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" resizable="false" text="Newsletter" />
+                           </columns>
+                        </TableView>
+                     </children></Pane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+   </center>
+</BorderPane>

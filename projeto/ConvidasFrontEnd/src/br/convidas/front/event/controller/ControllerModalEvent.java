@@ -35,7 +35,7 @@ public class ControllerModalEvent {
 	private Stage stage;
 	private Boolean newEvent;
 	private Evento event;
-	private ControllerEvent controllerEvent;
+	private ControllerEventRelationManager controllerEvent;
 	private Cidade cidadeSelect;
 	
 	public void actionName(){
@@ -68,7 +68,7 @@ public class ControllerModalEvent {
 		if(newEvent){
 			if(ManagerEvento.create(event)){
 				stage.close();
-				controllerEvent.messageSucessEvent("Evento cadastrado com sucesso!");
+				controllerEvent.messageSucess("Evento cadastrado com sucesso!");
 			}else{
 				Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
 				dialogoInfo.setTitle("Erro!");
@@ -78,7 +78,7 @@ public class ControllerModalEvent {
 		}else{
 			if(ManagerEvento.update(event)){
 				stage.close();
-				controllerEvent.messageSucessEvent("Evento alterado com sucesso!");
+				controllerEvent.messageSucess("Evento alterado com sucesso!");
 			}else{
 				Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
 				dialogoInfo.setTitle("Erro!");
@@ -155,11 +155,12 @@ public class ControllerModalEvent {
 		textCidade.setText(cidadeSelect.getName());
 	}
 	
-	public ControllerEvent getControllerEvent() {
+
+	public ControllerEventRelationManager getControllerEvent() {
 		return controllerEvent;
 	}
 
-	public void setControllerEvent(ControllerEvent controllerEvent) {
+	public void setControllerEvent(ControllerEventRelationManager controllerEvent) {
 		this.controllerEvent = controllerEvent;
 	}
 

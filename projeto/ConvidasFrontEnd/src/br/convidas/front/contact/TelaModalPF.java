@@ -5,6 +5,7 @@ import java.net.URL;
 
 import br.convidas.classes.PessoaFisica;
 import br.convidas.front.contact.controller.ControllerContacts;
+import br.convidas.front.contact.controller.ControllerContactsRelationManager;
 import br.convidas.front.contact.controller.ControllerModalPF;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;
@@ -17,7 +18,7 @@ import javafx.stage.Stage;
 public class TelaModalPF extends Application {
 	
 	private Boolean newPf;
-	private ControllerContacts controllerContacts;
+	private ControllerContactsRelationManager controllerContacts;
 	private PessoaFisica pessoaFisica;
 	
 	@Override
@@ -52,14 +53,6 @@ public class TelaModalPF extends Application {
 		this.newPf = newPf;
 	}
 
-	public ControllerContacts getControllerContacts() {
-		return controllerContacts;
-	}
-
-	public void setControllerContacts(ControllerContacts controllerContacts) {
-		this.controllerContacts = controllerContacts;
-	}
-
 	public PessoaFisica getPessoaFisica() {
 		return pessoaFisica;
 	}
@@ -67,6 +60,13 @@ public class TelaModalPF extends Application {
 	public void setPessoaFisica(PessoaFisica pessoaFisica) {
 		this.pessoaFisica = pessoaFisica;
 	}
-	
 
+	public ControllerContactsRelationManager getControllerContacts() {
+		return controllerContacts;
+	}
+
+	public void setControllerContacts(ControllerContactsRelationManager controllerContacts) {
+		this.controllerContacts = controllerContacts;
+	}
+	
 }

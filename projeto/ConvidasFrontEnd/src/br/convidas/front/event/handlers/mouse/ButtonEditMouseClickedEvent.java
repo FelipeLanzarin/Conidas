@@ -16,7 +16,7 @@ public class ButtonEditMouseClickedEvent implements EventAction{
 		try {
 			TelaModalEvent tme = new TelaModalEvent();
 			tme.setEvent(event);
-			tme.setControllerEvent(controllerEvent);
+//			tme.setControllerEvent(controllerEvent);
 			tme.setNewEvent(false);
 			tme.start(new Stage());
 		} catch (Exception e) {

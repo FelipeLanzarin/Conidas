@@ -29,7 +29,7 @@ public class ButtonDeleteMouseClickedPJ implements EventAction{
 					dialog.setTitle("Sucesso!");
 					dialog.setHeaderText("Pessoa excluída com sucesso");
 					dialog.showAndWait();
-					telaContact.updateTablePJ(null);
+//					telaContact.updateTablePJ(null);
 				}else{
 					Alert dialog = new Alert(Alert.AlertType.ERROR);
 					dialog.setTitle("Erro!");

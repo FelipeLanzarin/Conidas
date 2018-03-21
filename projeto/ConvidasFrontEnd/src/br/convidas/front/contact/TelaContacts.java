@@ -3,7 +3,7 @@ package br.convidas.front.contact;
 import java.io.IOException;
 import java.net.URL;
 
-import br.convidas.front.contact.controller.ControllerContacts;
+import br.convidas.front.contact.controller.ControllerContactsRelationManager;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;
 import javafx.application.Application;
@@ -23,7 +23,7 @@ public class TelaContacts extends Application {
 			fxmlParent = (Parent) loader.load();
 			stage.setResizable(false);
 			stage.setScene(new Scene(fxmlParent));
-			ControllerContacts control = (ControllerContacts) loader.getController();
+			ControllerContactsRelationManager control = (ControllerContactsRelationManager) loader.getController();
 			control.setStage(stage);
 			stage.setTitle("Contatos");
 			stage.show();

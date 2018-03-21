@@ -17,7 +17,7 @@ public class ButtonEditMouseClickedPF implements EventAction{
 		try {
 			TelaModalPF tme = new TelaModalPF();
 			tme.setPessoaFisica(pessoaFisica);
-			tme.setControllerContacts(telaContact);
+//			tme.setControllerContacts(telaContact);
 			tme.setNewPf(false);
 			tme.start(new Stage());
 		} catch (Exception e) {

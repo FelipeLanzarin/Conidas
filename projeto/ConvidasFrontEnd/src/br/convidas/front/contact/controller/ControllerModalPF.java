@@ -44,7 +44,7 @@ public class ControllerModalPF implements Initializable{
 	@FXML private Label labelTitle;
 	
 	private Stage stage;
-	private ControllerContacts contacts;
+	private ControllerContactsRelationManager contacts;
 	private Boolean newPF;
 	private PessoaFisica pessoa;
 	private Cidade cidadeSelect;
@@ -202,12 +202,14 @@ public class ControllerModalPF implements Initializable{
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
-	public ControllerContacts getContacts() {
+	public ControllerContactsRelationManager getContacts() {
 		return contacts;
 	}
-	public void setContacts(ControllerContacts contacts) {
+
+	public void setContacts(ControllerContactsRelationManager contacts) {
 		this.contacts = contacts;
 	}
+
 	public Boolean getNewPF() {
 		return newPF;
 	}
