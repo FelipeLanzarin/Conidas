@@ -5,12 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import br.convidas.classes.Evento;
+import br.convidas.classes.Participacao;
 import br.convidas.classes.PessoaFisica;
 import br.convidas.classes.PessoaJuridica;
 import br.convidas.front.contact.TelaConsultModalPF;
 import br.convidas.front.contact.TelaConsultModalPJ;
+import br.convidas.front.event.participation.controller.ControllerParticipation;
 import br.convidas.manager.ManagerPF;
 import br.convidas.manager.ManagerPJ;
+import br.convidas.manager.ManagerParticipacao;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.ConvidasUtils;
 import javafx.collections.FXCollections;
@@ -18,7 +22,9 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -56,15 +62,17 @@ public class ControllerConsultContacts implements Initializable{
 	@FXML private Pane paneSelect;
 	@FXML private Text a;
 	@FXML private Pane paneAlphabet;
+	@FXML private Label title;
 	private Stage stage;
 	private List<PessoaFisica> list;
 	private List<PessoaJuridica> listPj; 
 	private Text lastText;
+	private ControllerParticipation controllerParticipation;
+	private Evento evento;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		showAphabet();
-		createTable();
 	}
 	
 	private void showAphabet(){
@@ -123,8 +131,13 @@ public class ControllerConsultContacts implements Initializable{
 		if(text.getId().equals(lastText.getId())){
 			return;
 		}
-		list = ManagerPF.getPessoaFisicasOthers();
-		listPj = ManagerPJ.getPessoaJuridicasOthers();
+		if(controllerParticipation != null){
+			list = ManagerParticipacao.getPossibleParticipacaoPFOfEventOther(evento);
+			listPj = ManagerParticipacao.getPossibleParticipacaoPJOfEventOther(evento);
+		}else{
+			list = ManagerPF.getPessoaFisicasOthers();
+			listPj = ManagerPJ.getPessoaJuridicasOthers();
+		}
 		text.setFill(Color.GREEN);
 		lastText.setFill(a.getFill());
 		updateTable(list);
@@ -137,8 +150,14 @@ public class ControllerConsultContacts implements Initializable{
 			return;
 		}
 		int indice = Integer.parseInt(text.getId());
-		list = ManagerPF.getPessoasFisicas(ConvidasUtils.alphabetLowerCase[indice], ConvidasUtils.alphabetUpperCase[indice]);
-		listPj = ManagerPJ.getPessoaJuridicas(ConvidasUtils.alphabetLowerCase[indice], ConvidasUtils.alphabetUpperCase[indice]);
+		if(controllerParticipation != null){
+			
+			list = ManagerParticipacao.getPossibleParticipacaoPFOfEvent(evento, ConvidasUtils.alphabetLowerCase[indice], ConvidasUtils.alphabetUpperCase[indice]);
+			listPj = ManagerParticipacao.getPossibleParticipacaoPJOfEvent(evento, ConvidasUtils.alphabetLowerCase[indice], ConvidasUtils.alphabetUpperCase[indice]);
+		}else{
+			list = ManagerPF.getPessoasFisicas(ConvidasUtils.alphabetLowerCase[indice], ConvidasUtils.alphabetUpperCase[indice]);
+			listPj = ManagerPJ.getPessoaJuridicas(ConvidasUtils.alphabetLowerCase[indice], ConvidasUtils.alphabetUpperCase[indice]);
+		}
 		text.setFill(Color.GREEN);
 		lastText.setFill(a.getFill());
 		updateTable(list);
@@ -204,7 +223,13 @@ public class ControllerConsultContacts implements Initializable{
 	
 	public void createTable(){
 		try {
-			list = ManagerPF.getPessoasFisicas("A", "a");
+			if(controllerParticipation != null){
+				list = ManagerParticipacao.getPossibleParticipacaoPFOfEvent(evento, "A", "a");
+				listPj = ManagerParticipacao.getPossibleParticipacaoPJOfEvent(evento, "A", "a");
+			}else{
+				list = ManagerPF.getPessoasFisicas("A", "a");
+				listPj = ManagerPJ.getPessoaJuridicas("A", "a");
+			}
 			columnOne.setCellValueFactory(new PropertyValueFactory<>("name"));
 			columnTwo.setCellValueFactory(new PropertyValueFactory<>("cpf"));
 			columnThree.setCellValueFactory(new PropertyValueFactory<>("email"));
@@ -212,7 +237,6 @@ public class ControllerConsultContacts implements Initializable{
 			columnFive.setCellValueFactory(new PropertyValueFactory<>("telefone"));
 			columnSix.setCellValueFactory(new PropertyValueFactory<>("newsletter"));
 			updateTable(list);
-			listPj = ManagerPJ.getPessoaJuridicas("A", "a");
 			columnOnePj.setCellValueFactory(new PropertyValueFactory<>("name"));
 			columnTwoPj.setCellValueFactory(new PropertyValueFactory<>("cnpj"));
 			columnThreePj.setCellValueFactory(new PropertyValueFactory<>("email"));
@@ -229,34 +253,101 @@ public class ControllerConsultContacts implements Initializable{
 	public void clickTable(MouseEvent mouseEvent){
 		if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
 			if(mouseEvent.getClickCount() == 2){
-				try {
-					PessoaFisica pessoa = table.getSelectionModel().getSelectedItem();
-					TelaConsultModalPF tme = new TelaConsultModalPF();
-					tme.setPessoaFisica(pessoa);
-					tme.start(new Stage());
-				}catch (Exception e) {
-					LogTools.logError(e);
+				PessoaFisica pessoa = table.getSelectionModel().getSelectedItem();
+				if(controllerParticipation != null){
+					Participacao participation = addParticipationPF(pessoa);
+					if(participation != null){
+						updateParticipationPF(participation);
+						Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+						dialogoInfo.setTitle("Sucesso");
+						dialogoInfo.setHeaderText("Participação adicionada com sucesso!");
+						dialogoInfo.showAndWait();
+					}else{
+						Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
+						dialogoInfo.setTitle("Erro");
+						dialogoInfo.setHeaderText("Ocorreu um erro no processamento!");
+						dialogoInfo.showAndWait();
+					}
+				}else{
+					try {
+						TelaConsultModalPF tme = new TelaConsultModalPF();
+						tme.setPessoaFisica(pessoa);
+						tme.start(new Stage());
+					}catch (Exception e) {
+						LogTools.logError(e);
+					}
 				}
 			}
 		}
+	}
+	
+	public void updateParticipationPF(Participacao pf){
+		list.remove(pf.getPessoaFisica());
+		updateTable(list);
+		controllerParticipation.insertParticipationPF(pf.getPessoaFisica());
+	}
+	
+	private Participacao addParticipationPF(PessoaFisica pessoaFisica){
+		Participacao participation = new Participacao();
+		participation.setEvento(evento);
+		participation.setPessoaFisica(pessoaFisica);
+		
+		if(ManagerParticipacao.create(participation)){
+			return participation;
+		}
+		return null;
+	}
+	
+	private Participacao addParticipationPJ(PessoaJuridica pessoaJuridica){
+		Participacao participation = new Participacao();
+		participation.setEvento(evento);
+		participation.setPessoaJuridica(pessoaJuridica);
+		
+		if(ManagerParticipacao.create(participation)){
+			return participation;
+		}
+		return null;
 	}
 	
 	@FXML
 	public void clickTablePj(MouseEvent mouseEvent){
 		if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
 			if(mouseEvent.getClickCount() == 2){
-				try {
-					PessoaJuridica pessoa = tablePJ.getSelectionModel().getSelectedItem();
-					TelaConsultModalPJ tme = new TelaConsultModalPJ();
-					tme.setPessoaJuridica(pessoa);
-					tme.start(new Stage());
-				} catch (Exception e) {
-					LogTools.logError(e);
+				PessoaJuridica pessoa = tablePJ.getSelectionModel().getSelectedItem();
+				if(controllerParticipation != null){
+					Participacao participation = addParticipationPJ(pessoa);
+					if(participation != null){
+						updateParticipationPJ(participation);
+						Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+						dialogoInfo.setTitle("Sucesso");
+						dialogoInfo.setHeaderText("Participação adicionada com sucesso!");
+						dialogoInfo.showAndWait();
+					}else{
+						Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
+						dialogoInfo.setTitle("Erro");
+						dialogoInfo.setHeaderText("Ocorreu um erro no processamento!");
+						dialogoInfo.showAndWait();
+					}
+				}else{
+					try {
+						TelaConsultModalPJ tme = new TelaConsultModalPJ();
+						tme.setPessoaJuridica(pessoa);
+						tme.start(new Stage());
+					} catch (Exception e) {
+						LogTools.logError(e);
+					}
 				}
 			}
 		}
 		
 	}
+	
+	public void updateParticipationPJ(Participacao pj){
+		listPj.remove(pj.getPessoaJuridica());
+		updateTablePj(listPj);
+		controllerParticipation.insertParticipationPJ(pj.getPessoaJuridica());
+	}
+	
 	public void filterByCPF(){
 		String name = textCpf.getText();
 		List<PessoaFisica> listPFSelect = new ArrayList<>();
@@ -310,5 +401,23 @@ public class ControllerConsultContacts implements Initializable{
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
-	
+
+	public ControllerParticipation getControllerParticipation() {
+		return controllerParticipation;
+	}
+
+	public void setControllerParticipation(ControllerParticipation controllerParticipation) {
+		this.controllerParticipation = controllerParticipation;
+		if(controllerParticipation != null){
+			title.setText("Selecione com dois cliques sobre o participante ");
+		}
+	}
+
+	public Evento getEvento() {
+		return evento;
+	}
+
+	public void setEvento(Evento evento) {
+		this.evento = evento;
+	}
 }

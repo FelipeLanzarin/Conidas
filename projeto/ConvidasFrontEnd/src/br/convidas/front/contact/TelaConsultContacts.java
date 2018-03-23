@@ -3,7 +3,9 @@ package br.convidas.front.contact;
 import java.io.IOException;
 import java.net.URL;
 
+import br.convidas.classes.Evento;
 import br.convidas.front.contact.controller.ControllerConsultContacts;
+import br.convidas.front.event.participation.controller.ControllerParticipation;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;
 import javafx.application.Application;
@@ -14,6 +16,9 @@ import javafx.stage.Stage;
 
 public class TelaConsultContacts extends Application {
 
+	private ControllerParticipation controllerParticipation;
+	private Evento evento;
+	
 	@Override
 	public void start(Stage stage) throws Exception {
 		try {
@@ -26,12 +31,31 @@ public class TelaConsultContacts extends Application {
 			ControllerConsultContacts control = (ControllerConsultContacts) loader.getController();
 			control.setStage(stage);
 			stage.setTitle("Contatos");
+			control.setControllerParticipation(controllerParticipation);
+			control.setEvento(evento);
+			control.createTable();
 			stage.show();
 		
 		} catch (IOException e) {
 			LogTools.logError(e);
 		}
 		
+	}
+
+	public ControllerParticipation getControllerParticipation() {
+		return controllerParticipation;
+	}
+
+	public void setControllerParticipation(ControllerParticipation controllerParticipation) {
+		this.controllerParticipation = controllerParticipation;
+	}
+
+	public Evento getEvento() {
+		return evento;
+	}
+
+	public void setEvento(Evento evento) {
+		this.evento = evento;
 	}
 
 }

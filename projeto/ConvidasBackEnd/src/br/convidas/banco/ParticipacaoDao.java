@@ -114,12 +114,16 @@ public class ParticipacaoDao {
 		return participacao;
 	}	
 	
-	public List<PessoaJuridica> getPossibleParticipacaoPJOfEvent (Integer id, String querySQL){
+	public List<PessoaJuridica> getPossibleParticipacaoPJOfEvent (Integer id, String querySQL, String param, String param2){
 		EntityManager em = EntityManagerUtil.getEntityManager();
 		List<PessoaJuridica> pessoas = null;
 		try{
 			Query query = em.createNativeQuery(querySQL, PessoaJuridica.class);
 			query.setParameter("id",id);
+			if(param != null && param2 != null){
+				query.setParameter("param", param);
+				query.setParameter("param2", param2);
+			}
 			pessoas = query.getResultList();
 		}catch (Exception e) {
 			LogTools.logError("erro ao obter participacoes no banco: "+ e.toString());
@@ -129,12 +133,16 @@ public class ParticipacaoDao {
 		return pessoas;
 	}
 	
-	public List<PessoaFisica> getPossibleParticipacaoPFOfEvent (Integer id, String querySQL){
+	public List<PessoaFisica> getPossibleParticipacaoPFOfEvent (Integer id, String querySQL,String param, String param2){
 		EntityManager em = EntityManagerUtil.getEntityManager();
 		List<PessoaFisica> pessoas = null;
 		try{
 			Query query = em.createNativeQuery(querySQL, PessoaFisica.class);
 			query.setParameter("id",id);
+			if(param != null && param2 != null){
+				query.setParameter("param", param+"%");
+				query.setParameter("param2", param2+"%");
+			}
 			pessoas = query.getResultList();
 		}catch (Exception e) {
 			LogTools.logError(e);

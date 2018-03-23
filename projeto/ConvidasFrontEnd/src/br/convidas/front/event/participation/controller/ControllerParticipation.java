@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import br.convidas.classes.Evento;
 import br.convidas.classes.PessoaFisica;
 import br.convidas.classes.PessoaJuridica;
+import br.convidas.front.contact.TelaConsultContacts;
 import br.convidas.front.event.handlers.mouse.ButtonDeleteMouseClickedParticipation;
 import br.convidas.front.event.participation.TelaSelectPessoaForParticipation;
 import br.convidas.manager.ManagerParticipacao;
@@ -96,10 +97,14 @@ public class ControllerParticipation implements Initializable{
 	
 	public void addParticipation(){
 		try{
-			TelaSelectPessoaForParticipation tsp = new TelaSelectPessoaForParticipation();
-			tsp.setEvent(event);
-			tsp.setControllerParticipation(this);
-			tsp.start(new Stage());
+			TelaConsultContacts tcc = new TelaConsultContacts();
+			tcc.setEvento(event);
+			tcc.setControllerParticipation(this);
+			tcc.start(new Stage());
+//			TelaSelectPessoaForParticipation tsp = new TelaSelectPessoaForParticipation();
+//			tsp.setEvent(event);
+//			tsp.setControllerParticipation(this);
+//			tsp.start(new Stage());
 		}catch (Exception e) {
 			LogTools.logError(e);
 		}

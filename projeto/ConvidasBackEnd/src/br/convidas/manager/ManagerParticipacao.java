@@ -15,13 +15,41 @@ public class ManagerParticipacao {
 			+ "	select pj.id from pessoa_juridica pj, participacao"
 			+ "	where pj.id = participacao.pj_id"
 			+ "	and participacao.event_id = :id"
-			+ ") order by name";	
+			+ ") order by name";
+	private static final String QUERY_PJ_EVENT_OTHER ="select * from pessoa_juridica pj1"
+			+ " where  name ~ E'^[^a-zA-Z].*'"
+			+ " and pj1.id not in("
+			+ "	select pj.id from pessoa_juridica pj, participacao"
+			+ "	where pj.id = participacao.pj_id"
+			+ "	and participacao.event_id = :id"
+			+ ") order by name";
+	private static final String QUERY_PJ_EVENT_LIKE ="select * from pessoa_juridica pj1"
+			+ " where  (pj1.name like :param or pj1.name like :param2) "
+			+ " and pj1.id not in("
+			+ "	select pj.id from pessoa_juridica pj, participacao"
+			+ "	where pj.id = participacao.pj_id"
+			+ "	and participacao.event_id = :id"
+			+ ") order by name";
 	private static final String QUERY_PF_EVENT ="select * from pessoa_fisica pf1"
 			+ " where  pf1.id not in("
 			+ "	select pf.id from pessoa_fisica pf, participacao"
 			+ "	where pf.id = participacao.pf_id"
 			+ "	and participacao.event_id = :id"
-			+ ") order by name";	
+			+ ") order by name";
+	private static final String QUERY_PF_EVENT_OTHER ="select * from pessoa_fisica pf1"
+			+ " where name ~ E'^[^a-zA-Z].*'"
+			+ " and pf1.id not in("
+			+ "	select pf.id from pessoa_fisica pf, participacao"
+			+ "	where pf.id = participacao.pf_id"
+			+ "	and participacao.event_id = :id"
+			+ ") order by name";
+	private static final String QUERY_PF_EVENT_LIKE ="select * from pessoa_fisica pf1"
+			+ " where (pf1.name like :param or pf1.name like :param2) "
+			+ " and   pf1.id not in("
+			+ "	select pf.id from pessoa_fisica pf, participacao"
+			+ "	where pf.id = participacao.pf_id"
+			+ "	and participacao.event_id = :id"
+			+ ") order by name";
 	private static final String QUERY_PART_PJ_EVENT ="select pj.* from pessoa_juridica pj, participacao"
 			+ "	where pj.id = participacao.pj_id"
 			+ "	and participacao.event_id = :id"
@@ -58,7 +86,15 @@ public class ManagerParticipacao {
 	 * @return
 	 */
 	public static List<PessoaJuridica> getPossibleParticipacaoPJOfEvent(Evento evento) {
-		return getParticipacaoDao().getPossibleParticipacaoPJOfEvent(evento.getId(), QUERY_PJ_EVENT);
+		return getParticipacaoDao().getPossibleParticipacaoPJOfEvent(evento.getId(), QUERY_PJ_EVENT, null, null);
+	}
+	
+	public static List<PessoaJuridica> getPossibleParticipacaoPJOfEvent(Evento evento, String param, String param2) {
+		return getParticipacaoDao().getPossibleParticipacaoPJOfEvent(evento.getId(), QUERY_PJ_EVENT_LIKE, param, param2);
+	}
+	
+	public static List<PessoaJuridica> getPossibleParticipacaoPJOfEventOther(Evento evento) {
+		return getParticipacaoDao().getPossibleParticipacaoPJOfEvent(evento.getId(), QUERY_PJ_EVENT_OTHER, null, null);
 	}
 	
 	/**
@@ -67,7 +103,15 @@ public class ManagerParticipacao {
 	 * @return
 	 */
 	public static List<PessoaFisica> getPossibleParticipacaoPFOfEvent(Evento evento) {
-		return getParticipacaoDao().getPossibleParticipacaoPFOfEvent(evento.getId(), QUERY_PF_EVENT);
+		return getParticipacaoDao().getPossibleParticipacaoPFOfEvent(evento.getId(), QUERY_PF_EVENT, null, null);
+	}
+	
+	public static List<PessoaFisica> getPossibleParticipacaoPFOfEvent(Evento evento, String param, String param2) {
+		return getParticipacaoDao().getPossibleParticipacaoPFOfEvent(evento.getId(), QUERY_PF_EVENT_LIKE, param, param2);
+	}
+	
+	public static List<PessoaFisica> getPossibleParticipacaoPFOfEventOther(Evento evento) {
+		return getParticipacaoDao().getPossibleParticipacaoPFOfEvent(evento.getId(), QUERY_PF_EVENT_OTHER, null, null);
 	}
 	
 	/**
@@ -76,7 +120,7 @@ public class ManagerParticipacao {
 	 * @return
 	 */
 	public static List<PessoaJuridica> getParticipacaoPJOfEvent(Evento evento) {
-		return getParticipacaoDao().getPossibleParticipacaoPJOfEvent(evento.getId(), QUERY_PART_PJ_EVENT);
+		return getParticipacaoDao().getPossibleParticipacaoPJOfEvent(evento.getId(), QUERY_PART_PJ_EVENT, null, null);
 	}
 	
 	/**
@@ -85,7 +129,7 @@ public class ManagerParticipacao {
 	 * @return
 	 */
 	public static List<PessoaFisica> getParticipacaoPFOfEvent(Evento evento) {
-		return getParticipacaoDao().getPossibleParticipacaoPFOfEvent(evento.getId(), QUERY_PART_PF_EVENT);
+		return getParticipacaoDao().getPossibleParticipacaoPFOfEvent(evento.getId(), QUERY_PART_PF_EVENT, null, null);
 	}
 	
 	/**
