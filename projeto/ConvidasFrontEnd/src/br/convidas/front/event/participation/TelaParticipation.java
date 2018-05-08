@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 
 import br.convidas.classes.Evento;
-import br.convidas.front.event.participation.controller.ControllerParticipation;
+import br.convidas.front.event.participation.controller.ControllerParticipationRelationManager;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;
 import javafx.application.Application;
@@ -26,9 +26,10 @@ public class TelaParticipation extends Application{
 			fxmlParent = (Parent) loader.load();
 			stage.setResizable(false);
 			stage.setScene(new Scene(fxmlParent));
-			ControllerParticipation control = (ControllerParticipation) loader.getController();
+			ControllerParticipationRelationManager control = (ControllerParticipationRelationManager) loader.getController();
 			control.setEvent(event);
 			control.setStage(stage);
+			control.createTable();
 			stage.setTitle("Evento");
 			stage.show();
 		

@@ -5,7 +5,7 @@ import java.net.URL;
 
 import br.convidas.classes.Evento;
 import br.convidas.front.contact.controller.ControllerConsultContacts;
-import br.convidas.front.event.participation.controller.ControllerParticipation;
+import br.convidas.front.event.participation.controller.ControllerParticipationRelationManager;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;
 import javafx.application.Application;
@@ -16,9 +16,9 @@ import javafx.stage.Stage;
 
 public class TelaConsultContacts extends Application {
 
-	private ControllerParticipation controllerParticipation;
+	private ControllerParticipationRelationManager controllerParticipation;
 	private Evento evento;
-	
+	private Boolean isRelationConsult;
 	@Override
 	public void start(Stage stage) throws Exception {
 		try {
@@ -33,6 +33,12 @@ public class TelaConsultContacts extends Application {
 			stage.setTitle("Contatos");
 			control.setControllerParticipation(controllerParticipation);
 			control.setEvento(evento);
+			control.setIsRelationConsult(isRelationConsult);
+			if(isRelationConsult){
+				control.consultRelation();
+			}else{
+				control.showAphabet();
+			}
 			control.createTable();
 			stage.show();
 		
@@ -42,13 +48,15 @@ public class TelaConsultContacts extends Application {
 		
 	}
 
-	public ControllerParticipation getControllerParticipation() {
+	public ControllerParticipationRelationManager getControllerParticipation() {
 		return controllerParticipation;
 	}
 
-	public void setControllerParticipation(ControllerParticipation controllerParticipation) {
+
+	public void setControllerParticipation(ControllerParticipationRelationManager controllerParticipation) {
 		this.controllerParticipation = controllerParticipation;
 	}
+
 
 	public Evento getEvento() {
 		return evento;
@@ -57,5 +65,14 @@ public class TelaConsultContacts extends Application {
 	public void setEvento(Evento evento) {
 		this.evento = evento;
 	}
+
+	public Boolean getIsRelationConsult() {
+		return isRelationConsult;
+	}
+
+	public void setIsRelationConsult(Boolean isRelationConsult) {
+		this.isRelationConsult = isRelationConsult;
+	}
+	
 
 }

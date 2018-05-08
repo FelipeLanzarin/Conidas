@@ -27,7 +27,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			LogTools.logDebug("\n\n************************* Start Convidas *************************");
+//			LogTools.logDebug("\n\n************************* Start Convidas *************************");
 			setPrimaryStage(primaryStage);
 			URL arquivoFXML = getClass().getResource(XmlPathUtils.LOAD_BD);
 			Parent fxmlParent;

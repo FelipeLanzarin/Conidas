@@ -8,6 +8,7 @@ import br.convidas.classes.OcorrencyPJ;
 import br.convidas.classes.PessoaFisica;
 import br.convidas.classes.PessoaJuridica;
 import br.convidas.front.contact.ocorrency.controller.ControllerModalOcorrency;
+import br.convidas.front.contact.ocorrency.controller.ControllerOcorrencyRelationManager;
 import br.convidas.front.contact.ocorrency.controller.ControllerOcorrencys;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;
@@ -25,7 +26,7 @@ public class TelaModalOcorrency extends Application {
 	private OcorrencyPJ ocorrencyPJ;
 	private Boolean isPF;
 	private Boolean isPJ;
-	private ControllerOcorrencys controllerOcorrencys;
+	private ControllerOcorrencyRelationManager controllerOcorrencys;
 	
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -70,11 +71,11 @@ public class TelaModalOcorrency extends Application {
 		this.ocorrencyPF = ocorrencyPF;
 	}
 
-	public ControllerOcorrencys getControllerOcorrencys() {
+	public ControllerOcorrencyRelationManager getControllerOcorrencys() {
 		return controllerOcorrencys;
 	}
 
-	public void setControllerOcorrencys(ControllerOcorrencys controllerOcorrencys) {
+	public void setControllerOcorrencys(ControllerOcorrencyRelationManager controllerOcorrencys) {
 		this.controllerOcorrencys = controllerOcorrencys;
 	}
 

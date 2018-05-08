@@ -5,6 +5,7 @@ import java.net.URL;
 
 import br.convidas.classes.PessoaFisica;
 import br.convidas.classes.PessoaJuridica;
+import br.convidas.front.contact.ocorrency.controller.ControllerOcorrencyRelationManager;
 import br.convidas.front.contact.ocorrency.controller.ControllerOcorrencys;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.XmlPathUtils;
@@ -28,7 +29,7 @@ public class TelaOcorrencys extends Application {
 			fxmlParent = (Parent) loader.load();
 			stage.setResizable(false);
 			stage.setScene(new Scene(fxmlParent));
-			ControllerOcorrencys control = (ControllerOcorrencys) loader.getController();
+			ControllerOcorrencyRelationManager control = (ControllerOcorrencyRelationManager) loader.getController();
 			control.setStage(stage);
 			control.setPessoaFisica(pessoaFisica);
 			control.setPessoaJuridica(pessoaJuridica);

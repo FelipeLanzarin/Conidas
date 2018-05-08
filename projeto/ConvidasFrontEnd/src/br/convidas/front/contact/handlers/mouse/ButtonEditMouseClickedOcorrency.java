@@ -22,7 +22,7 @@ public class ButtonEditMouseClickedOcorrency implements EventAction{
 			TelaModalOcorrency tme = new TelaModalOcorrency();
 			tme.setOcorrencyPF(ocorrencyPF);
 			tme.setOcorrencyPJ(ocorrencyPJ);
-			tme.setControllerOcorrencys(telaOcorrency);
+//			tme.setControllerOcorrencys(telaOcorrency);
 			tme.setIsPF(isPF);
 			tme.setIsPJ(isPJ);
 			tme.start(new Stage());

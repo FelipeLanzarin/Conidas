@@ -145,5 +145,34 @@ public class PessoaFisicaDao {
 		}
 		return pessoas;
 	}
+	
+	public List<PessoaFisica> getPessoaFisicasByRelation (String param){
+		EntityManager em = EntityManagerUtil.getEntityManager();
+		List<PessoaFisica> pessoas = null;
+		try{
+			Query query = em.createQuery("FROM PessoaFisica where relacao = :relation ORDER BY name");
+			query.setParameter("relation", param);
+			pessoas = query.getResultList();
+		}catch (Exception e) {
+			LogTools.logError("erro ao obter pessoas fisicas no banco: "+ e.toString());
+		}finally{
+			em.close();
+		}
+		return pessoas;
+	}
+	public List<PessoaFisica> getPessoaFisicasByNewsletter (boolean newsleter){
+		EntityManager em = EntityManagerUtil.getEntityManager();
+		List<PessoaFisica> pessoas = null;
+		try{
+			Query query = em.createQuery("FROM PessoaFisica where newsletter = :newsletter ORDER BY name");
+			query.setParameter("newsletter", newsleter);
+			pessoas = query.getResultList();
+		}catch (Exception e) {
+			LogTools.logError("erro ao obter pessoas fisicas no banco: "+ e.toString());
+		}finally{
+			em.close();
+		}
+		return pessoas;
+	}
 
 }

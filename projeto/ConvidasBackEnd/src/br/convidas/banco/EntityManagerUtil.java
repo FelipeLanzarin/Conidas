@@ -29,7 +29,7 @@ public class EntityManagerUtil {
 		if (emf == null) {
 			try {
 				emf = Persistence.createEntityManagerFactory("convidasDB");
-				LogTools.logDebug("Connection BD SUCESS");
+//				LogTools.logDebug("Connection BD SUCESS");
 			} catch (Exception arg0) {
 				LogTools.logError(arg0);
 				return false;

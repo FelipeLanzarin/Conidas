@@ -29,6 +29,14 @@ public class ManagerPF {
 		return getPessoaFisicaDao().getPessoaFisicas(param, param2);
 	}
 	
+	public static List<PessoaFisica> getPessoasFisicasByRelation(String param) {
+		return getPessoaFisicaDao().getPessoaFisicasByRelation(param);
+	}
+	
+	public static List<PessoaFisica> getPessoaFisicasByNewsletter(boolean param) {
+		return getPessoaFisicaDao().getPessoaFisicasByNewsletter(param);
+	}
+	
 	public static List<PessoaFisica> getPessoaFisicasOthers (){
 		String querySQL = "SELECT * FROM pessoa_fisica WHERE name ~ E'^[^a-zA-Z].*';";
 		return getPessoaFisicaDao().getPessoaFisicasOthers(querySQL);

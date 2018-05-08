@@ -106,6 +106,16 @@
                               <TableColumn fx:id="columnSixPj" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" resizable="false" text="Newsletter" />
                            </columns>
                         </TableView>
+                        <ComboBox fx:id="comboBoxRelation" layoutX="308.0" layoutY="21.0" onHiding="#selectRelation" prefHeight="33.0" prefWidth="364.0" promptText="Selecione o Grupo" />
+                        <Button fx:id="buttonConsult" alignment="CENTER" contentDisplay="CENTER" layoutX="976.0" layoutY="23.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#clickButtonConsult" prefHeight="30.0" prefWidth="170.0" style="-fx-border-color: #2e6da4; -fx-background-color: #337ab7; -fx-border-radius: 2; -fx-background-radius: 2;" text="Consultar por Grupo" textAlignment="CENTER" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="SansSerif Bold" size="13.0" />
+                           </font>
+                        </Button>
+                        <ComboBox fx:id="comboBoxNewsLetter" layoutX="714.0" layoutY="21.0" onHiding="#selectNewsletter" prefHeight="33.0" prefWidth="233.0" promptText="NewsLetter" />
                      </children></Pane>
                      </children>
                   </AnchorPane>

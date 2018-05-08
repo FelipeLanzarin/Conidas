@@ -9,14 +9,17 @@ import br.convidas.classes.Evento;
 import br.convidas.classes.Participacao;
 import br.convidas.classes.PessoaFisica;
 import br.convidas.classes.PessoaJuridica;
+import br.convidas.front.contact.TelaConsultContacts;
 import br.convidas.front.contact.TelaConsultModalPF;
 import br.convidas.front.contact.TelaConsultModalPJ;
-import br.convidas.front.event.participation.controller.ControllerParticipation;
+import br.convidas.front.event.participation.controller.ControllerParticipationRelationManager;
 import br.convidas.manager.ManagerPF;
 import br.convidas.manager.ManagerPJ;
 import br.convidas.manager.ManagerParticipacao;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.ConvidasUtils;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -24,10 +27,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
@@ -35,6 +41,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 public class ControllerConsultContacts implements Initializable{
 	
@@ -63,19 +70,99 @@ public class ControllerConsultContacts implements Initializable{
 	@FXML private Text a;
 	@FXML private Pane paneAlphabet;
 	@FXML private Label title;
+	@FXML private ComboBox<String> comboBoxRelation;
+	@FXML private ComboBox<String> comboBoxNewsLetter;
+	@FXML private Button buttonConsult;
 	private Stage stage;
 	private List<PessoaFisica> list;
 	private List<PessoaJuridica> listPj; 
 	private Text lastText;
-	private ControllerParticipation controllerParticipation;
+	private ControllerParticipationRelationManager controllerParticipation;
 	private Evento evento;
+	private Boolean isRelationConsult;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		showAphabet();
 	}
 	
-	private void showAphabet(){
+	public void consultRelation(){
+		paneAlphabet.setVisible(false);
+		paneSelect.setVisible(false);
+		buttonPj.setVisible(false);
+		buttonConsult.setVisible(false);
+		comboBoxRelation.setVisible(true);
+		List<String>relations = new ArrayList<>();
+		relations.add("Bolsista");
+		relations.add("Padrinho");
+		relations.add("Colaborador");
+		relations.add("Amigo");
+		comboBoxRelation.getItems().addAll(relations);
+		List<String> newsLetters = new ArrayList<>();
+		newsLetters.add("Sim");
+		newsLetters.add("Não");
+		comboBoxNewsLetter.getItems().addAll(newsLetters);
+		comboBoxNewsLetter.setVisible(true);
+	}
+	
+	public void clickButtonConsult(){
+		try{
+			TelaConsultContacts tcc = new TelaConsultContacts();
+			tcc.setIsRelationConsult(true);
+			tcc.start(new Stage());
+		}catch (Exception e) {
+			LogTools.logError(e);
+		}
+	}
+	
+	public void selectRelation(){
+		String selected = comboBoxRelation.getSelectionModel().getSelectedItem();
+		if(selected == null){
+			return;
+		}
+		consultByGroup(selected);
+	}
+	
+	public void  selectNewsletter(){
+		String selected = comboBoxNewsLetter.getSelectionModel().getSelectedItem();
+		if(selected == null){
+			return;
+		}
+		if(selected.equals("Sim")){
+			consultByNewsletter(true);
+		}else{
+			consultByNewsletter(false);
+		}
+	}
+	
+	private void consultByGroup(String relation){
+		list = ManagerPF.getPessoasFisicasByRelation(relation);
+		if(list != null){
+			updateTable(list);
+		}else{
+			Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+			dialogoInfo.setTitle("Alerta");
+			dialogoInfo.setHeaderText("Nenhuma pessoa encontrada para o grupo selecionado!");
+			dialogoInfo.showAndWait();
+		}
+	}
+	
+	private void consultByNewsletter(Boolean newsletter){
+		list = ManagerPF.getPessoaFisicasByNewsletter(newsletter);
+		if(list != null){
+			updateTable(list);
+		}else{
+			Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+			dialogoInfo.setTitle("Alerta");
+			dialogoInfo.setHeaderText("Nenhuma pessoa encontrada para o grupo selecionado!");
+			dialogoInfo.showAndWait();
+		}
+	}
+	
+	
+	
+	public void showAphabet(){
+		comboBoxRelation.setVisible(false);
+		comboBoxNewsLetter.setVisible(false);
 		Double newLayoutX = a.getLayoutX();
 		for ( int i = 0; i<26 ;i++) {
 			Text b = new Text();
@@ -223,27 +310,49 @@ public class ControllerConsultContacts implements Initializable{
 	
 	public void createTable(){
 		try {
-			if(controllerParticipation != null){
-				list = ManagerParticipacao.getPossibleParticipacaoPFOfEvent(evento, "A", "a");
-				listPj = ManagerParticipacao.getPossibleParticipacaoPJOfEvent(evento, "A", "a");
-			}else{
-				list = ManagerPF.getPessoasFisicas("A", "a");
-				listPj = ManagerPJ.getPessoaJuridicas("A", "a");
+			if(!isRelationConsult){
+				if(controllerParticipation != null){
+					list = ManagerParticipacao.getPossibleParticipacaoPFOfEvent(evento, "A", "a");
+					listPj = ManagerParticipacao.getPossibleParticipacaoPJOfEvent(evento, "A", "a");
+				}else{
+					list = ManagerPF.getPessoasFisicas("A", "a");
+					listPj = ManagerPJ.getPessoaJuridicas("A", "a");
+				}
 			}
 			columnOne.setCellValueFactory(new PropertyValueFactory<>("name"));
 			columnTwo.setCellValueFactory(new PropertyValueFactory<>("cpf"));
 			columnThree.setCellValueFactory(new PropertyValueFactory<>("email"));
 			columnFour.setCellValueFactory(new PropertyValueFactory<>("relacao"));
 			columnFive.setCellValueFactory(new PropertyValueFactory<>("telefone"));
-			columnSix.setCellValueFactory(new PropertyValueFactory<>("newsletter"));
-			updateTable(list);
-			columnOnePj.setCellValueFactory(new PropertyValueFactory<>("name"));
-			columnTwoPj.setCellValueFactory(new PropertyValueFactory<>("cnpj"));
-			columnThreePj.setCellValueFactory(new PropertyValueFactory<>("email"));
-			columnFourPj.setCellValueFactory(new PropertyValueFactory<>("responsavel"));
-			columnFivePj.setCellValueFactory(new PropertyValueFactory<>("telefone"));
-			columnSixPj.setCellValueFactory(new PropertyValueFactory<>("newsletter"));
-			updateTablePj(listPj);
+			columnSix.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<PessoaFisica,String>, ObservableValue<String>>(){
+				@Override
+				public ObservableValue<String> call(CellDataFeatures<PessoaFisica, String> pf) {
+					String b = "Não";
+					if(pf.getValue().getNewsletter()){
+						b = "Sim";
+					}
+					return new SimpleStringProperty(b);
+				}
+			});
+			if(!isRelationConsult){
+				updateTable(list);
+				columnOnePj.setCellValueFactory(new PropertyValueFactory<>("name"));
+				columnTwoPj.setCellValueFactory(new PropertyValueFactory<>("cnpj"));
+				columnThreePj.setCellValueFactory(new PropertyValueFactory<>("email"));
+				columnFourPj.setCellValueFactory(new PropertyValueFactory<>("responsavel"));
+				columnFivePj.setCellValueFactory(new PropertyValueFactory<>("telefone"));
+				columnSixPj.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<PessoaJuridica,String>, ObservableValue<String>>(){
+					@Override
+					public ObservableValue<String> call(CellDataFeatures<PessoaJuridica, String> pj) {
+						String b = "Não";
+						if(pj.getValue().getNewsletter()){
+							b = "Sim";
+						}
+						return new SimpleStringProperty(b);
+					}
+				});
+				updateTablePj(listPj);
+			}
 		}catch (Exception e) {
 			LogTools.logError(e);
 		}
@@ -402,11 +511,11 @@ public class ControllerConsultContacts implements Initializable{
 		this.stage = stage;
 	}
 
-	public ControllerParticipation getControllerParticipation() {
+	public ControllerParticipationRelationManager getControllerParticipation() {
 		return controllerParticipation;
 	}
 
-	public void setControllerParticipation(ControllerParticipation controllerParticipation) {
+	public void setControllerParticipation(ControllerParticipationRelationManager controllerParticipation) {
 		this.controllerParticipation = controllerParticipation;
 		if(controllerParticipation != null){
 			title.setText("Selecione com dois cliques sobre o participante ");
@@ -420,4 +529,13 @@ public class ControllerConsultContacts implements Initializable{
 	public void setEvento(Evento evento) {
 		this.evento = evento;
 	}
+
+	public Boolean getIsRelationConsult() {
+		return isRelationConsult;
+	}
+
+	public void setIsRelationConsult(Boolean isRelationConsult) {
+		this.isRelationConsult = isRelationConsult;
+	}
+	
 }

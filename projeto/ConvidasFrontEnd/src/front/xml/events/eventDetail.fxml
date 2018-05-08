@@ -62,7 +62,7 @@
                         <Font name="SansSerif Regular" size="14.0" />
                      </font>
                   </TextField>
-                  <TextArea fx:id="textDescription" editable="false" focusTraversable="false" layoutX="125.0" layoutY="296.0" mouseTransparent="true" prefHeight="171.0" prefWidth="482.0" promptText="Descrição">
+                  <TextArea fx:id="textDescription" editable="false" focusTraversable="false" layoutX="125.0" layoutY="296.0" mouseTransparent="true" prefHeight="171.0" prefWidth="482.0" promptText="Descrição" wrapText="true">
                      <font>
                         <Font name="SansSerif Regular" size="14.0" />
                      </font>

@@ -83,7 +83,7 @@ public class ControllerOcorrencys implements Initializable{
 			
 			tmpf.setIsPF(isPf);
 			tmpf.setIsPJ(isPj);
-			tmpf.setControllerOcorrencys(this);
+//			tmpf.setControllerOcorrencys(this);
 			tmpf.setPessoaFisica(pessoaFisica);
 			tmpf.setPessoaJuridica(pessoaJuridica);
 			tmpf.start(new Stage());

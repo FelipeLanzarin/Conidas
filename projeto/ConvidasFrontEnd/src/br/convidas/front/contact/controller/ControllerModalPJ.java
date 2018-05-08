@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 
 import br.convidas.classes.Cidade;
 import br.convidas.classes.PessoaJuridica;
-import br.convidas.front.contact.cities.TelaCities;
+import br.convidas.front.cities.TelaCities;
 import br.convidas.manager.ManagerPJ;
 import br.convidas.tools.log.LogTools;
 import javafx.fxml.FXML;
@@ -166,6 +166,7 @@ public class ControllerModalPJ implements Initializable{
 		try {
 			TelaCities tc = new TelaCities();
 			tc.setControllerModalPJ(this);
+			tc.setIsSelect(true);
 			tc.start(new Stage());
 		} catch (Exception e) {
 			LogTools.logError(e);

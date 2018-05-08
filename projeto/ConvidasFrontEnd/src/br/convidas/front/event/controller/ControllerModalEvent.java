@@ -9,7 +9,7 @@ import java.util.Date;
 
 import br.convidas.classes.Cidade;
 import br.convidas.classes.Evento;
-import br.convidas.front.contact.cities.TelaCities;
+import br.convidas.front.cities.TelaCities;
 import br.convidas.manager.ManagerEvento;
 import br.convidas.tools.log.LogTools;
 import javafx.fxml.FXML;
@@ -45,6 +45,7 @@ public class ControllerModalEvent {
 	public void openCities(){
 		try{
 			TelaCities tc = new TelaCities();
+			tc.setIsSelect(true);
 			tc.setControllerModalEvent(this);
 			tc.start(new Stage());
 		}catch (Exception e) {

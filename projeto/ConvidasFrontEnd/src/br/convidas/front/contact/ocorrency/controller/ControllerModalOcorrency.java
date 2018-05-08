@@ -1,7 +1,6 @@
 package br.convidas.front.contact.ocorrency.controller;
 
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -33,7 +32,7 @@ public class ControllerModalOcorrency implements Initializable{
 	@FXML private Label labelTitle;
 	
 	private Stage stage;
-	private ControllerOcorrencys controllerOcorrencys;
+	private ControllerOcorrencyRelationManager controllerOcorrencys;
 	private Boolean isPF;
 	private Boolean isPJ;
 	private PessoaFisica pessoaFisica;
@@ -220,14 +219,13 @@ public class ControllerModalOcorrency implements Initializable{
 		}
 	}
 
-	public ControllerOcorrencys getControllerOcorrencys() {
+	public ControllerOcorrencyRelationManager getControllerOcorrencys() {
 		return controllerOcorrencys;
 	}
 
-	public void setControllerOcorrencys(ControllerOcorrencys controllerOcorrencys) {
+	public void setControllerOcorrencys(ControllerOcorrencyRelationManager controllerOcorrencys) {
 		this.controllerOcorrencys = controllerOcorrencys;
 	}
-
 
 	public OcorrencyPF getOcorrencyPF() {
 		return ocorrencyPF;

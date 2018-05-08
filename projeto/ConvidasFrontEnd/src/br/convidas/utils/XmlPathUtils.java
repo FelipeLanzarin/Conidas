@@ -14,12 +14,12 @@ public class XmlPathUtils {
 	public static final String MODAL_MANAGER_CITIES = "/front/xml/cities/modalCity.fxml";
 	public static final String CONTACT_MODAL_CONSULT_PF = "/front/xml/contact/modalConsultPF.fxml";
 	public static final String CONTACT_MODAL_CONSULT_PJ = "/front/xml/contact/modalConsultPJ.fxml";
-	public static final String OCORRENCYS = "/front/xml/contact/ocorrency/ocorrencys.fxml";
+	public static final String OCORRENCYS = "/front/xml/contact/ocorrency/ocorrencys2.fxml";
 	public static final String MODAL_OCORRENCYS = "/front/xml/contact/ocorrency/modalOcorrency.fxml";
 	public static final String MANAGER_EVENT = "/front/xml/events/events2.fxml";
 	public static final String MODAL_EVENT = "/front/xml/events/modalEvents.fxml";
 	public static final String CONSULT_EVENT = "/front/xml/events/consultEvents2.fxml";
 	public static final String EVENT_DETAIL = "/front/xml/events/eventDetail.fxml";
-	public static final String PARTICIPÁTION = "/front/xml/events/participation/consultParticipations.fxml";
+	public static final String PARTICIPÁTION = "/front/xml/events/participation/consultParticipations2.fxml";
 	public static final String SELECT_PARTICIPATION = "/front/xml/events/participation/selectPessoaForParticipation.fxml";
 }

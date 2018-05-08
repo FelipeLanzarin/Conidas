@@ -99,7 +99,8 @@ public class ControllerParticipation implements Initializable{
 		try{
 			TelaConsultContacts tcc = new TelaConsultContacts();
 			tcc.setEvento(event);
-			tcc.setControllerParticipation(this);
+			tcc.setIsRelationConsult(false);
+//			tcc.setControllerParticipation(this);
 			tcc.start(new Stage());
 //			TelaSelectPessoaForParticipation tsp = new TelaSelectPessoaForParticipation();
 //			tsp.setEvent(event);

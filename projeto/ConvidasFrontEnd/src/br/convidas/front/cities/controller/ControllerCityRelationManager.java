@@ -9,6 +9,7 @@ import br.convidas.classes.Cidade;
 import br.convidas.front.contact.cities.TelaModalCity;
 import br.convidas.front.contact.controller.ControllerModalPF;
 import br.convidas.front.contact.controller.ControllerModalPJ;
+import br.convidas.front.event.controller.ControllerModalEvent;
 import br.convidas.manager.ManagerCidade;
 import br.convidas.tools.log.LogTools;
 import javafx.collections.FXCollections;
@@ -18,10 +19,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class ControllerCityRelationManager implements Initializable{
@@ -31,14 +35,16 @@ public class ControllerCityRelationManager implements Initializable{
 	@FXML private TableColumn<Cidade, String> columnOne;
 	@FXML private TableColumn<Cidade, String> columnTwo;
 	@FXML private TableColumn<Cidade, String> columnThree;
+	@FXML private Button buttonNew;
 	@FXML private Button buttonEdit;
 	@FXML private Button buttonDelete;
+	@FXML private Label labelSelect;
+	private Boolean isSelect = false;
 	private Stage stage;
 	private List<Cidade> list;
 	private ControllerModalPJ controllerModalPJ;
 	private ControllerModalPF controllerModalPF;
-	
-	
+	private ControllerModalEvent controllerModalEvent;
 	
 	public void filterCities(){
 		String city = textNameFilter.getText().toLowerCase();
@@ -114,11 +120,28 @@ public class ControllerCityRelationManager implements Initializable{
 		}
 	}
 	
-	public void clickTable(){
+	@FXML
+	public void clickTable(MouseEvent mouseEvent){
 		try {
-			Cidade city = table.getSelectionModel().getSelectedItem();
-			if(city != null){
-				disableButtons(false);
+			if(isSelect){
+				if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
+					if(mouseEvent.getClickCount() == 2){
+						Cidade city = table.getSelectionModel().getSelectedItem();
+						if(controllerModalPF != null){
+							controllerModalPF.setCidadeSelect(city);
+						}else if(controllerModalPJ != null){
+							controllerModalPJ.setCidadeSelect(city);
+						}else{
+							controllerModalEvent.setCidadeSelect(city);
+						}
+						getStage().close();
+					}
+				}
+			}else{
+				Cidade city = table.getSelectionModel().getSelectedItem();
+				if(city != null){
+					disableButtons(false);
+				}
 			}
 		}catch (Exception e) {
 			LogTools.logError(e);
@@ -184,6 +207,28 @@ public class ControllerCityRelationManager implements Initializable{
 
 	public void setControllerModalPF(ControllerModalPF controllerModalPF) {
 		this.controllerModalPF = controllerModalPF;
+	}
+	
+	public ControllerModalEvent getControllerModalEvent() {
+		return controllerModalEvent;
+	}
+
+	public void setControllerModalEvent(ControllerModalEvent controllerModalEvent) {
+		this.controllerModalEvent = controllerModalEvent;
+	}
+
+	public Boolean getIsSelect() {
+		return isSelect;
+	}
+
+	public void setIsSelect(Boolean isSelect) {
+		this.isSelect = isSelect;
+		if(isSelect){
+			labelSelect.setVisible(true);
+			buttonNew.setVisible(false);
+			buttonEdit.setVisible(false);
+			buttonDelete.setVisible(false);
+		}
 	}
 
 	@Override

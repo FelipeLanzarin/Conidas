@@ -121,8 +121,8 @@ public class ParticipacaoDao {
 			Query query = em.createNativeQuery(querySQL, PessoaJuridica.class);
 			query.setParameter("id",id);
 			if(param != null && param2 != null){
-				query.setParameter("param", param);
-				query.setParameter("param2", param2);
+				query.setParameter("param", param+"%");
+				query.setParameter("param2", param2+"%");
 			}
 			pessoas = query.getResultList();
 		}catch (Exception e) {

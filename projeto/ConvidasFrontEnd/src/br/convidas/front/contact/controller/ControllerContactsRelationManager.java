@@ -13,6 +13,8 @@ import br.convidas.manager.ManagerPF;
 import br.convidas.manager.ManagerPJ;
 import br.convidas.tools.log.LogTools;
 import br.convidas.utils.ConvidasUtils;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -20,6 +22,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
@@ -30,6 +33,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 public class ControllerContactsRelationManager implements Initializable{
 	
@@ -243,7 +247,16 @@ public class ControllerContactsRelationManager implements Initializable{
 			columnThree.setCellValueFactory(new PropertyValueFactory<>("email"));
 			columnFour.setCellValueFactory(new PropertyValueFactory<>("relacao"));
 			columnFive.setCellValueFactory(new PropertyValueFactory<>("telefone"));
-			columnSix.setCellValueFactory(new PropertyValueFactory<>("newsletter"));
+			columnSix.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<PessoaFisica,String>, ObservableValue<String>>(){
+				@Override
+				public ObservableValue<String> call(CellDataFeatures<PessoaFisica, String> pf) {
+					String b = "Não";
+					if(pf.getValue().getNewsletter()){
+						b = "Sim";
+					}
+					return new SimpleStringProperty(b);
+				}
+			});
 			updateTable(list);
 			listPj = ManagerPJ.getPessoaJuridicas("A", "a");
 			columnOnePj.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -251,7 +264,16 @@ public class ControllerContactsRelationManager implements Initializable{
 			columnThreePj.setCellValueFactory(new PropertyValueFactory<>("email"));
 			columnFourPj.setCellValueFactory(new PropertyValueFactory<>("responsavel"));
 			columnFivePj.setCellValueFactory(new PropertyValueFactory<>("telefone"));
-			columnSixPj.setCellValueFactory(new PropertyValueFactory<>("newsletter"));
+			columnSixPj.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<PessoaJuridica,String>, ObservableValue<String>>(){
+				@Override
+				public ObservableValue<String> call(CellDataFeatures<PessoaJuridica, String> pj) {
+					String b = "Não";
+					if(pj.getValue().getNewsletter()){
+						b = "Sim";
+					}
+					return new SimpleStringProperty(b);
+				}
+			});
 			updateTablePj(listPj);
 		}catch (Exception e) {
 			LogTools.logError(e);
@@ -332,11 +354,15 @@ public class ControllerContactsRelationManager implements Initializable{
 							dialog.setTitle("Sucesso!");
 							dialog.setHeaderText("Pessoa excluída com sucesso");
 							dialog.showAndWait();
-							updateTable(null);
+							if(lastText.getId().equals("outro")){
+								filterByOther(lastText, true);
+							}else{
+								filterByLetther(lastText, true);
+							}
 						}else{
 							Alert dialog = new Alert(Alert.AlertType.ERROR);
 							dialog.setTitle("Erro!");
-							dialog.setHeaderText("Pessoa já possui uma Ocorrência!");
+							dialog.setHeaderText("Pessoa já possui uma Ocorrência ou já tem participação em um evento!");
 							dialog.showAndWait();
 						}
 					}catch (Exception me) {
@@ -364,11 +390,15 @@ public class ControllerContactsRelationManager implements Initializable{
 							dialog.setTitle("Sucesso!");
 							dialog.setHeaderText("Pessoa excluída com sucesso");
 							dialog.showAndWait();
-							updateTablePj(null);
+							if(lastText.getId().equals("outro")){
+								filterByOther(lastText, true);
+							}else{
+								filterByLetther(lastText, true);
+							}
 						}else{
 							Alert dialog = new Alert(Alert.AlertType.ERROR);
 							dialog.setTitle("Erro!");
-							dialog.setHeaderText("Pessoa já possui uma Ocorrência!");
+							dialog.setHeaderText("Pessoa já possui uma Ocorrência ou já tem participação em um evento!");
 							dialog.showAndWait();
 						}
 					}catch (Exception me) {

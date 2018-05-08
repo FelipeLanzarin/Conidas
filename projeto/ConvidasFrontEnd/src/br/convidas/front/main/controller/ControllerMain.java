@@ -23,6 +23,7 @@ public class ControllerMain {
 	public void clickButtonConsult(){
 		try {
 			TelaConsultContacts tc = new TelaConsultContacts();
+			tc.setIsRelationConsult(false);
 			tc.start(new Stage());
 		} catch (Exception e) {
 			LogTools.logError(e);

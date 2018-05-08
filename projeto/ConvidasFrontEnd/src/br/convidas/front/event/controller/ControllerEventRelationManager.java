@@ -1,5 +1,11 @@
 package br.convidas.front.event.controller;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -76,6 +82,22 @@ public class ControllerEventRelationManager implements Initializable{
 		updateTable(null);
 	}
 	
+//	public static void main(String[] args) throws IOException {
+//		URL url = new URL("https://docs.google.com/document/d/1T5L9GhhDE3quqQcH2_a8Ixf8hRfhb1Q9x0E-9Lz4pHI/edit");
+////		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+////        connection.addRequestProperty("Request-Method", "GET");
+//		//		System.out.println(url.toString());
+////		System.out.println(url.getFile().toString());
+//		BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+//         StringBuffer newData = new StringBuffer();
+//         String s = "";
+//         while (null != ((s = br.readLine()))) {
+//             newData.append(s);
+//         }
+//         System.out.println(newData.toString());
+//         br.close(); 
+//	}
+//	
 	public void createTable(){
 		try {
 			list = ManagerEvento.getEventos();
